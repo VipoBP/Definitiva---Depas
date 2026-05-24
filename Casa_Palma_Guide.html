@@ -17,28 +17,28 @@ img{display:block;max-width:100%}
 
 /* ============ TOKENS ============ */
 :root{
-  --mar:#0E4F5A; --mar-deep:#073841;
-  --cielo:#6FB7B8; --cielo-pale:#D4ECEC;
-  --arena:#E8D6B0; --arena-deep:#C8AE7E;
-  --papel:#F6EFE0; --papel-warm:#FBF5E8;
-  --coral:#D9583D; --coral-deep:#A8341D; --coral-pale:#F5D8CC;
-  --selva:#3D5A3A; --selva-pale:#D8E2CF;
-  --noche:#101B22; --noche-mid:#1E3038;
+  --mar:#2D6A44; --mar-deep:#1C4A2E;
+  --cielo:#5A9A6E; --cielo-pale:#C8DFC8;
+  --arena:#E0D4C0; --arena-deep:#B8A870;
+  --papel:#F7F3EC; --papel-warm:#FBF8F3;
+  --coral:#E8513A; --coral-deep:#B83020; --coral-pale:#FADDCE;
+  --selva:#2D6A44; --selva-pale:#C8DFC8;
+  --noche:#0D1C12; --noche-mid:#163020;
   --sol:#D6A33D; --sol-pale:#F3E2B0;
-  --ink:#1B2426; --ink-soft:#4B5A60;
-  --rule:rgba(27,36,38,0.14);
-  --sec-intro-bg:#F6EFE0;
-  --sec-taq-bg:#F4DCC8;
-  --sec-rest-bg:#D6E8E8;
-  --sec-ant-bg:#F2E3B6;
-  --sec-dia-bg:#EFE5CC;
-  --sec-pla-bg:#BFDDDD;
-  --sec-tour-bg:#D6DEC4;
-  --sec-noc-bg:#101B22;
-  --sec-com-bg:#EBD2D8;
-  --sec-serv-bg:#DDE3D3;
-  --sec-trans-bg:#E3D6BE;
-  --sec-tips-bg:#F4E5B8;
+  --ink:#1A2318; --ink-soft:#4A5848;
+  --rule:rgba(26,35,24,0.14);
+  --sec-intro-bg:#F4F0E8;
+  --sec-taq-bg:#FADDCE;
+  --sec-rest-bg:#C8DFC8;
+  --sec-ant-bg:#F0E6D0;
+  --sec-dia-bg:#EDE4CC;
+  --sec-pla-bg:#B8D8C0;
+  --sec-tour-bg:#CCDCBF;
+  --sec-noc-bg:#0D1C12;
+  --sec-com-bg:#FADDCE;
+  --sec-serv-bg:#D0DCCA;
+  --sec-trans-bg:#E4DCCA;
+  --sec-tips-bg:#F0E4C8;
 }
 
 body{
@@ -68,7 +68,7 @@ body{
 
 /* ============ HERO ============ */
 .hero{
-  position:relative;background:var(--mar-deep);color:#F6EFE0;
+  position:relative;background:var(--mar-deep);color:#F4F0E8;
   padding:3rem 2.5rem 3rem;min-height:88vh;
   display:flex;flex-direction:column;justify-content:space-between;
   overflow:hidden;
@@ -77,8 +77,8 @@ body{
   content:"";position:absolute;inset:0;z-index:0;
   background:
     radial-gradient(ellipse at 80% 20%, rgba(214,163,61,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse at 10% 90%, rgba(111,183,184,0.22) 0%, transparent 60%),
-    linear-gradient(180deg,var(--mar-deep) 0%,var(--mar) 65%,#082E36 100%);
+    radial-gradient(ellipse at 10% 90%, rgba(75,155,90,0.22) 0%, transparent 60%),
+    linear-gradient(180deg,var(--mar-deep) 0%,var(--mar) 65%,#0B1E0F 100%);
 }
 .hero::after{
   content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;
@@ -102,7 +102,7 @@ body{
 .hero-title{
   font-family:'Fraunces',serif;font-weight:300;
   font-size:clamp(64px, 14vw, 200px);
-  line-height:0.92;letter-spacing:-0.03em;color:#FBF5E8;
+  line-height:0.92;letter-spacing:-0.03em;color:#FBF8F3;
   font-variation-settings:"opsz" 144;
 }
 .hero-title em{font-style:italic;font-weight:400;color:var(--sol-pale)}
@@ -206,7 +206,7 @@ body{
 .sec-pla{background:var(--sec-pla-bg)}
 .sec-pla .chapter-no, .sec-pla .chapter-title{color:var(--mar-deep)}
 .sec-tour{background:var(--sec-tour-bg)}
-.sec-tour .chapter-no, .sec-tour .chapter-title{color:#2D4A2A}
+.sec-tour .chapter-no, .sec-tour .chapter-title{color:#1C4A2E}
 .sec-noc{background:var(--sec-noc-bg);color:#EDE0C4}
 .sec-noc .chapter-no, .sec-noc .chapter-title{color:#F2D8A4}
 .sec-noc .chapter-kicker, .sec-noc .chapter-lede{color:rgba(237,224,196,0.7)}
@@ -214,7 +214,7 @@ body{
 .sec-com{background:var(--sec-com-bg)}
 .sec-com .chapter-no, .sec-com .chapter-title{color:#7C2542}
 .sec-serv{background:var(--sec-serv-bg)}
-.sec-serv .chapter-no, .sec-serv .chapter-title{color:#2D4A2A}
+.sec-serv .chapter-no, .sec-serv .chapter-title{color:#1C4A2E}
 .sec-trans{background:var(--sec-trans-bg)}
 .sec-trans .chapter-no, .sec-trans .chapter-title{color:#5A4524}
 .sec-tips{background:var(--sec-tips-bg)}
@@ -265,7 +265,7 @@ body{
 
 .house-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem}
 .house-card{
-  background:#FBF5E8;border:1px solid var(--rule);
+  background:#FBF8F3;border:1px solid var(--rule);
   padding:1.5rem 1.6rem;border-radius:2px;position:relative;
 }
 .house-card-head{
@@ -299,7 +299,7 @@ body{
   gap:1.5rem 1.25rem;margin-top:1rem;
 }
 .postcard{
-  position:relative;background:#FBF5E8;
+  position:relative;background:#FBF8F3;
   border:1px solid rgba(27,36,38,0.12);
   display:flex;flex-direction:column;
   transition:transform .25s ease,box-shadow .25s ease;
@@ -356,8 +356,8 @@ body{
 }
 .pc-tag.coral{background:var(--coral-pale);color:var(--coral-deep)}
 .pc-tag.sand{background:var(--sol-pale);color:#8E5A0A}
-.pc-tag.jungle{background:var(--selva-pale);color:#2D4A2A}
-.pc-tag.fav{background:var(--coral);color:#FBF5E8}
+.pc-tag.jungle{background:var(--selva-pale);color:#1C4A2E}
+.pc-tag.fav{background:var(--coral);color:#FBF8F3}
 .pc-foot{
   display:flex;align-items:center;justify-content:space-between;
   padding:0.75rem 1.25rem;border-top:1px dotted rgba(27,36,38,0.2);
@@ -369,7 +369,7 @@ body{
 .pc-foot a:hover .arrow{transform:translateX(3px)}
 
 /* Night variant */
-.sec-noc .postcard{background:#1E2F38;border-color:rgba(237,224,196,0.18)}
+.sec-noc .postcard{background:#0F2018;border-color:rgba(237,224,196,0.18)}
 .sec-noc .pc-name{color:#F2D8A4}
 .sec-noc .pc-name em{color:#E8A8FF}
 .sec-noc .pc-desc{color:rgba(237,224,196,0.7)}
@@ -379,7 +379,7 @@ body{
 .sec-noc .pc-foot{border-top-color:rgba(237,224,196,0.18);color:#F2D8A4}
 .sec-noc .pc-img .ph{background-color:#243842;color:#F2D8A4;background-image:repeating-linear-gradient(135deg,transparent 0px,transparent 10px,rgba(242,216,164,0.07) 10px,rgba(242,216,164,0.07) 11px)}
 .sec-noc .pc-img{border-bottom-color:rgba(237,224,196,0.18)}
-.sec-noc .pc-stamp{background:#0D161B;color:#F2D8A4;border-color:#F2D8A4}
+.sec-noc .pc-stamp{background:#081008;color:#F2D8A4;border-color:#F2D8A4}
 
 /* ============ TIMELINE (UN DÍA PERFECTO) ============ */
 .day-intro{
@@ -426,7 +426,7 @@ body{
 /* ============ TIPS ============ */
 .tip-stack{display:flex;flex-direction:column;gap:1rem}
 .tip{
-  background:#FBF5E8;border:1px solid var(--rule);
+  background:#FBF8F3;border:1px solid var(--rule);
   padding:1.4rem 1.6rem;display:grid;grid-template-columns:auto 1fr;gap:1.25rem;
   border-left:4px solid var(--coral);border-radius:2px;
 }
@@ -444,15 +444,15 @@ body{
 
 .note-box{
   margin-top:2rem;padding:1.25rem 1.5rem;border-radius:2px;
-  background:#FAEBA9;border:1px solid rgba(142,90,10,0.2);
-  font-size:14px;line-height:1.6;color:#5A3F08;
+  background:#EBE5A8;border:1px solid rgba(142,90,10,0.2);
+  font-size:14px;line-height:1.6;color:#5A4008;
   display:flex;gap:14px;align-items:flex-start;
 }
-.note-box strong{font-weight:600;color:#3D2A05}
+.note-box strong{font-weight:600;color:#3A2A08}
 
 /* ============ FOOTER ============ */
 .footer{
-  background:var(--mar-deep);color:#F6EFE0;padding:5rem 2rem 4rem;
+  background:var(--mar-deep);color:#F4F0E8;padding:5rem 2rem 4rem;
   text-align:center;position:relative;overflow:hidden;
 }
 .footer::before{
@@ -469,7 +469,7 @@ body{
 .footer-headline{
   font-family:'Fraunces',serif;font-weight:300;font-style:italic;
   font-size:clamp(28px,5vw,48px);line-height:1.15;
-  max-width:780px;margin:0 auto 2rem;color:#FBF5E8;letter-spacing:-0.01em;
+  max-width:780px;margin:0 auto 2rem;color:#FBF8F3;letter-spacing:-0.01em;
   font-variation-settings:"opsz" 144;
 }
 .footer-headline em{font-style:italic;color:var(--sol-pale)}
@@ -505,7 +505,7 @@ body{
 /* ============ QUICK BAR ============ */
 .quick-bar{
   position:fixed;bottom:1.1rem;left:50%;transform:translateX(-50%);
-  background:rgba(13,22,28,0.94);
+  background:rgba(10,18,10,0.94);
   backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
   display:flex;align-items:center;gap:2px;
   padding:5px 5px 5px 5px;border-radius:999px;z-index:40;
@@ -530,12 +530,12 @@ body{
   -webkit-tap-highlight-color:transparent;
 }
 .qa-btn .ico{font-size:17px;line-height:1}
-.qa-btn:hover,.qa-btn:active{background:rgba(246,239,224,0.1);color:#FBF5E8}
+.qa-btn:hover,.qa-btn:active{background:rgba(246,239,224,0.1);color:#FBF8F3}
 .qa-btn.icon-only{width:40px}
 .qa-btn.lang-switch{padding:0 14px;font-weight:700;letter-spacing:0.18em;color:var(--sol-pale)}
-.qa-btn.lang-switch:hover{background:rgba(246,239,224,0.1);color:#FBF5E8}
+.qa-btn.lang-switch:hover{background:rgba(246,239,224,0.1);color:#FBF8F3}
 .qa-btn.sos{padding:0 14px 0 12px;background:rgba(217,88,61,0.18);color:#FFB099}
-.qa-btn.sos:hover{background:rgba(217,88,61,0.36);color:#FBF5E8}
+.qa-btn.sos:hover{background:rgba(217,88,61,0.36);color:#FBF8F3}
 .qa-btn.sos .ico{font-size:15px}
 
 /* ============ MODALS ============ */
@@ -720,28 +720,150 @@ body{
 .toc-rail.in-dark .toc-node.cur .toc-node-text{color:#C89BF0}
 
 /* ============ CARD ACCENT ============ */
-.sec-taq .postcard{border-top:3px solid #D96050}
-.sec-rest .postcard{border-top:3px solid #1A7080}
+.sec-taq .postcard{border-top:3px solid var(--coral)}
+.sec-rest .postcard{border-top:3px solid var(--mar-deep)}
 .sec-ant .postcard{border-top:3px solid #C8902A}
-.sec-pla .postcard{border-top:3px solid #4AACAC}
-.sec-tour .postcard{border-top:3px solid #4A7040}
+.sec-pla .postcard{border-top:3px solid var(--mar)}
+.sec-tour .postcard{border-top:3px solid var(--mar-deep)}
 .sec-noc .postcard{border-top:3px solid #8C74D4}
-.sec-com .postcard{border-top:3px solid #A04565}
-.sec-serv .postcard{border-top:3px solid #507855}
+.sec-com .postcard{border-top:3px solid var(--coral-deep)}
+.sec-serv .postcard{border-top:3px solid var(--selva)}
 .sec-trans .postcard{border-top:3px solid #A08050}
-.postcard:hover{transform:translateY(-4px);box-shadow:0 26px 50px -20px rgba(14,79,90,0.42)}
+.postcard:hover{transform:translateY(-4px);box-shadow:0 26px 50px -20px rgba(28,74,46,0.42)}
 
 /* ============ MOBILE NAV IMPROVEMENTS ============ */
 @media(max-width:600px){
   .nav-item{border-radius:8px}
   .nav-item.active{
-    background:var(--mar-deep);color:#FBF5E8;
-    box-shadow:0 2px 10px rgba(14,79,90,0.22);
+    background:var(--mar-deep);color:#FBF8F3;
+    box-shadow:0 2px 10px rgba(28,74,46,0.22);
   }
-  .quick-bar{
-    max-width:calc(100vw - 2rem);
-  }
+  .quick-bar{max-width:calc(100vw - 2rem)}
 }
+
+/* ============ FILTER BAR ============ */
+.filter-bar{
+  position:sticky;top:var(--nav-h,48px);z-index:19;
+  background:rgba(247,243,236,0.96);
+  backdrop-filter:saturate(160%) blur(12px);-webkit-backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid var(--rule);
+  padding:.5rem 1.5rem;overflow-x:auto;white-space:nowrap;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  transition:opacity .2s;
+}
+.filter-bar::-webkit-scrollbar{display:none}
+.filter-bar-inner{display:inline-flex;gap:6px;max-width:1280px}
+.flt-btn{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:5px 13px;border-radius:999px;
+  border:1.5px solid var(--rule);background:transparent;
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);
+  cursor:pointer;transition:all .15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.flt-btn:hover{background:rgba(26,35,24,0.05);color:var(--ink);border-color:rgba(26,35,24,0.3)}
+.flt-btn.active{background:var(--mar-deep);border-color:var(--mar-deep);color:var(--papel-warm)}
+.postcard{transition:transform .25s ease,box-shadow .25s ease,opacity .28s ease}
+.postcard.flt-hide{opacity:0;transform:scale(0.94) translateY(8px);pointer-events:none}
+
+/* ============ DUAL MAP BUTTONS ============ */
+.map-links-wrap{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.google-maps-link,.apple-maps-link{
+  display:inline-flex;align-items:center;gap:3px;
+  font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  padding:4px 9px;border-radius:3px;
+  background:rgba(26,35,24,0.07);color:var(--mar-deep);
+  transition:background .15s;white-space:nowrap;
+}
+.google-maps-link:hover,.apple-maps-link:hover{background:rgba(26,35,24,0.16)}
+.sec-noc .google-maps-link,.sec-noc .apple-maps-link{
+  background:rgba(247,243,236,0.1);color:#F2D8A4}
+.sec-noc .google-maps-link:hover,.sec-noc .apple-maps-link:hover{background:rgba(247,243,236,0.18)}
+.pc-foot{flex-wrap:wrap;gap:.35rem}
+
+/* ============ QUICK VIEW ============ */
+.pc-qv{
+  position:absolute;inset:0;z-index:5;border-radius:2px;
+  background:rgba(26,35,24,0.93);
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  display:flex;align-items:center;justify-content:center;padding:1.1rem;
+  opacity:0;pointer-events:none;transition:opacity .22s;
+}
+.postcard:hover .pc-qv{opacity:1;pointer-events:auto}
+@media(hover:none){
+  .postcard:hover .pc-qv{opacity:0;pointer-events:none}
+  .postcard.qv-open .pc-qv{opacity:1;pointer-events:auto}
+}
+.pcqv-inner{text-align:center;width:100%}
+.pcqv-name{
+  font-family:'Fraunces',serif;font-weight:400;font-size:18px;
+  color:#F4F0E8;line-height:1.2;margin-bottom:.6rem;
+}
+.pcqv-name em{color:var(--coral-pale);font-style:italic}
+.pcqv-desc{
+  font-size:12px;line-height:1.5;color:rgba(244,240,232,.72);
+  margin-bottom:.85rem;text-align:left;
+}
+.pcqv-maps{display:flex;gap:7px;justify-content:center;flex-wrap:wrap}
+.pcqv-maps .google-maps-link,.pcqv-maps .apple-maps-link{
+  background:rgba(247,243,236,0.1);color:#F4F0E8;
+}
+.pcqv-maps .google-maps-link:hover,.pcqv-maps .apple-maps-link:hover{background:rgba(247,243,236,0.22)}
+
+/* ============ ACCORDION (tips & servicios) ============ */
+.accordion-stack .tip{
+  padding:0;display:block;overflow:hidden;
+  border-left-width:3px;
+}
+.acc-head{
+  width:100%;text-align:left;display:flex;align-items:center;gap:.9rem;
+  padding:1rem 1.4rem;background:transparent;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  font-family:inherit;border:none;transition:background .15s;
+}
+.acc-head:hover{background:rgba(26,35,24,0.03)}
+.acc-head[aria-expanded="true"]{background:rgba(26,35,24,0.025)}
+.acc-no{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:34px;line-height:1;color:var(--coral);opacity:.9;
+  flex-shrink:0;min-width:2rem;text-align:center;
+  font-variation-settings:"opsz" 72;
+}
+.acc-title{
+  font-family:'Fraunces',serif;font-weight:400;font-size:18px;
+  color:var(--ink);flex:1;line-height:1.25;text-align:left;
+}
+.acc-icon{
+  width:22px;height:22px;border-radius:50%;border:1.5px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--ink-soft);transition:transform .25s,background .15s;position:relative;
+}
+.acc-icon::before,.acc-icon::after{
+  content:'';position:absolute;background:currentColor;border-radius:1px;
+}
+.acc-icon::before{width:10px;height:1.5px}
+.acc-icon::after{width:1.5px;height:10px;transition:transform .25s}
+.acc-head[aria-expanded="true"] .acc-icon::after{transform:scaleY(0)}
+.acc-head[aria-expanded="true"] .acc-icon{background:rgba(26,35,24,0.07)}
+.acc-body{overflow:hidden;max-height:0;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
+.acc-text{
+  padding:.1rem 1.4rem 1.25rem calc(1.4rem + 2rem + .9rem);
+  font-size:14px;line-height:1.6;color:var(--ink-soft);
+}
+.acc-text em{font-family:'Fraunces',serif;font-style:italic;color:var(--ink)}
+.acc-text .acc-meta{
+  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft);opacity:.7;margin-bottom:.5rem;
+}
+.serv-ico{
+  font-family:'DM Sans',sans-serif;font-style:normal;font-size:9.5px;
+  letter-spacing:.15em;font-weight:700;
+  background:var(--cielo-pale);color:var(--mar-deep);
+  padding:3px 7px;border-radius:3px;
+}
+/* Map links inside accordion */
+.acc-text .map-links-wrap{margin-top:.65rem}
 
 </style>
 <script type='text/javascript' nonce='CNrGbkphPDNKWqsODk0tcA==' src='https://claude.ai/k8coJJ8Ev7HU-TAqv85tFcs99fDj5bdYGBOHPnJij3refilhOdEs_JbzU7Fd6uWxgERRkuZvAMpLDyCKzn8EscImkV-3lnOt1qS9D1wH3ZSAxcOG6RzJM1xBrz_mbnc1Dw2eR3eN74LxrrTe9B36BaLbnLtFpJ8m1gGzGjsAOpS73C08FnGctWhO9UHJ0PjjiRccVVWK35-FkKPYjDbX0jV8upJSj-kGxlppwPakhUlmuprmZ2XiwgvwJ_eDFI1EOz_-9uS0FF5qDFJS3jenlHBbBhXi4o2vZuXNxDn_e530Ufo6uMdz9gvl57IJ3b6li4IIoBTHdCeIXeRJVixl3v1_nCM-Bb0nAtffOh7UvxCExhvT0rtsShf3smC134MPscdozVIqzIYbxdtPLjI3wtBkNzr5PIRq-nx2XkJb_mKkYu8GCoWaoKydmW2qOUqIKkONpM6Nw8FPFTjyqyC1nxdSLqHgnaJe3yX4AWspLtehUgz3oEaIajz-TpUDQOekosjsXEfomX2pDZBw1nogd9wqLkHP4P9OMx__hfSQfLWX3Hrl3qpPJIDHyKfSsqketXBK'></script></head>
@@ -827,7 +949,7 @@ body{
   <!-- Wave transition -->
   <div class="hero-wave" aria-hidden="true">
     <svg viewBox="0 0 1440 64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0 40 C240 64 480 14 720 40 C960 66 1200 20 1440 40 L1440 64 L0 64 Z" fill="#F6EFE0"/>
+      <path d="M0 40 C240 64 480 14 720 40 C960 66 1200 20 1440 40 L1440 64 L0 64 Z" fill="#F4F0E8"/>
     </svg>
   </div>
 </header>
@@ -850,6 +972,17 @@ body{
     <a href="#tips" class="nav-item ni-tips"><span class="ico">💡</span>Tips</a>
   </div>
 </nav>
+
+<!-- FILTER BAR ============================================================ -->
+<div class="filter-bar" id="filter-bar" role="toolbar" aria-label="Filtrar lugares">
+  <div class="filter-bar-inner">
+    <button class="flt-btn active" data-filter="all"><span class="lang-es">Todo</span><span class="lang-en">All</span></button>
+    <button class="flt-btn" data-filter="fav"><span class="lang-es">★ Favoritos</span><span class="lang-en">★ Favorites</span></button>
+    <button class="flt-btn" data-filter="cheap"><span class="lang-es">$ Económico</span><span class="lang-en">$ Budget</span></button>
+    <button class="flt-btn" data-filter="sea"><span class="lang-es">🌊 Vista al mar</span><span class="lang-en">🌊 Waterfront</span></button>
+    <button class="flt-btn" data-filter="local"><span class="lang-es">📍 Local</span><span class="lang-en">📍 Local pick</span></button>
+  </div>
+</div>
 
 <!-- I — INTRO ============================================================ -->
 <section class="section sec-intro" id="intro" data-screen-label="01 Intro">
@@ -882,14 +1015,10 @@ body{
 
     <div class="intro-text">
       <div class="lang-es">
-        <p>Mi padre Victor llegó a Cozumel hace 40 años. Mi madre Alina llegó 25 años después. Yo nací aquí.</p>
-        <p>Esta guía la escribimos nosotros — los lugares a los que vamos, donde comemos, las playas que conocemos. <strong>Bienvenido a Casa Palma, y bienvenido a Cozumel.</strong></p>
-        <p>Adentro vas a encontrar nuestros favoritos para comer, las mejores playas, los tours que valen la pena, dónde comprar, qué hacer de noche y los tips que solo sabe alguien que vive aquí.</p>
+        <p>Casa Palma es un departamento en Cozumel, hecho y recomendado por gente de la isla. Todo lo que encuentras aquí — los restaurantes, las playas, los tours — es lo que nosotros mismos usamos. <strong>Bienvenido.</strong></p>
       </div>
       <div class="lang-en">
-        <p>My father Victor came to Cozumel forty years ago. My mother Alina arrived twenty-five years later. I was born here.</p>
-        <p>This guide is just us — the places we go, where we eat, the beaches we know. <strong>Welcome to Casa Palma, and welcome to Cozumel.</strong></p>
-        <p>Inside you'll find our favorite places to eat, the best beaches, tours worth your time, where to shop, what to do after dark, and the tips only a local would know.</p>
+        <p>Casa Palma is an apartment in Cozumel, put together by people from the island. Everything in this guide — the restaurants, the beaches, the tours — is what we actually use. <strong>Welcome.</strong></p>
       </div>
     </div>
   </div>
@@ -1937,6 +2066,7 @@ body{
   <div class="modal-row"><span class="ico">🚒</span><div><b><span class="lang-es">Bomberos:</span><span class="lang-en">Fire Dept:</span></b> <a href="tel:+529878720800">+52 987 872 0800</a></div></div>
   <div class="modal-row"><span class="ico">👮</span><div><b><span class="lang-es">Policía turística:</span><span class="lang-en">Tourist Police:</span></b> <a href="tel:+529878720092">+52 987 872 0092</a></div></div>
   <div class="modal-divider"></div>
+  <div class="modal-row"><span class="ico">💬</span><div><b><span class="lang-es">Anfitrión</span><span class="lang-en">Host</span> Victor:</b> <a href="https://wa.me/529871119261" target="_blank" rel="noopener">WhatsApp</a></div></div>
   <div class="modal-row"><span class="ico">💬</span><div><b><span class="lang-es">Anfitriona</span><span class="lang-en">Host</span> Alina:</b> <a href="https://wa.me/529875645509" target="_blank" rel="noopener">WhatsApp</a></div></div>
   <div class="modal-row"><span class="ico">💬</span><div><b><span class="lang-es">Anfitriona</span><span class="lang-en">Host</span> Maria:</b> <a href="https://wa.me/529871031992" target="_blank" rel="noopener">WhatsApp</a></div></div>
   <div class="modal-note">
@@ -1950,6 +2080,7 @@ body{
 <div class="modal-box">
   <button class="modal-close" onclick="closeModal(&#39;modal-whatsapp&#39;)">×</button>
   <div class="modal-title">💬 WhatsApp</div>
+  <div class="modal-row"><span class="ico">👨</span><div><b>Victor:</b> <a href="https://wa.me/529871119261" target="_blank" rel="noopener">+52 987 111 9261</a></div></div>
   <div class="modal-row"><span class="ico">👩</span><div><b>Alina:</b> <a href="https://wa.me/529875645509" target="_blank" rel="noopener">+52 987 564 5509</a></div></div>
   <div class="modal-row"><span class="ico">👩</span><div><b>Maria:</b> <a href="https://wa.me/529871031992" target="_blank" rel="noopener">+52 987 103 1992</a></div></div>
   <div class="modal-note">
@@ -2070,6 +2201,271 @@ document.addEventListener('keydown', function(e){
       if (el) observer.observe(el);
     });
   }
+})();
+
+/* ---- Nav height for filter bar sticky offset ---- */
+(function(){
+  var nav = document.querySelector('.nav-wrap');
+  if (nav) {
+    var fb = document.querySelector('.filter-bar');
+    var h = nav.offsetHeight;
+    document.documentElement.style.setProperty('--nav-h', h + 'px');
+    if (fb) fb.style.top = h + 'px';
+  }
+})();
+
+/* ---- Category filter ---- */
+(function(){
+  // Tag all postcards with filter categories
+  document.querySelectorAll('.postcard').forEach(function(card){
+    var cats = ['all'];
+    if (card.querySelector('.pc-tag.fav')) cats.push('fav');
+    // Price: single $ only
+    var pEl = card.querySelector('.pc-meta > span:last-child');
+    var price = pEl ? pEl.textContent.trim() : '';
+    if (price === '$') cats.push('cheap');
+    // Sea view: foot location or tag mentioning mar/malecón
+    var footLoc = card.querySelector('.pc-foot > span:last-child');
+    if (footLoc) {
+      var ft = footLoc.textContent.toLowerCase();
+      if (ft.includes('malecón') || ft.includes('malecon') || ft.includes('waterfront') || ft.includes('norte') || ft.includes('north')) cats.push('sea');
+    }
+    card.querySelectorAll('.pc-tag').forEach(function(t){
+      var tx = t.textContent.toLowerCase();
+      if (tx.includes('mar') || tx.includes('ocean') || tx.includes('snorkel') || tx.includes('playa') || tx.includes('vista')) cats.push('sea');
+      if (tx.includes('local')) cats.push('local');
+    });
+    if (card.querySelector('.pc-tag.sand')) cats.push('local');
+    card.dataset.cats = [...new Set(cats)].join(' ');
+  });
+
+  var bar = document.getElementById('filter-bar');
+  if (!bar) return;
+  var current = 'all';
+  var hideTimers = new Map();
+
+  function applyFilter(f){
+    current = f;
+    document.querySelectorAll('.postcard').forEach(function(card){
+      var cats = card.dataset.cats || 'all';
+      var match = f === 'all' || cats.split(' ').includes(f);
+      var timer = hideTimers.get(card);
+      if (timer) { clearTimeout(timer); hideTimers.delete(card); }
+      if (match){
+        card.style.display = '';
+        requestAnimationFrame(function(){ card.classList.remove('flt-hide'); });
+      } else {
+        card.classList.add('flt-hide');
+        var t = setTimeout(function(){ card.style.display = 'none'; }, 300);
+        hideTimers.set(card, t);
+      }
+    });
+    bar.querySelectorAll('.flt-btn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.filter === f);
+    });
+  }
+
+  bar.querySelectorAll('.flt-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ applyFilter(btn.dataset.filter); });
+  });
+})();
+
+/* ---- Dual Maps (Google + Apple) ---- */
+(function(){
+  document.querySelectorAll('.pc-foot a[href*="google.com/maps"], .tl-where a[href*="google.com/maps"]').forEach(function(link){
+    var gUrl = link.href;
+    var query = '';
+    try { query = new URL(gUrl).searchParams.get('query') || ''; } catch(e){}
+    if (!query) return;
+    var aUrl = 'https://maps.apple.com/?q=' + encodeURIComponent(query);
+
+    // Update Google link text & style
+    link.querySelectorAll('.lang-es').forEach(function(s){ s.textContent = '🗺 Google'; });
+    link.querySelectorAll('.lang-en').forEach(function(s){ s.textContent = '🗺 Google'; });
+    var arrow = link.querySelector('.arrow');
+    if (arrow) arrow.remove();
+    link.classList.add('google-maps-link');
+
+    // Create Apple Maps link
+    var aLink = document.createElement('a');
+    aLink.href = aUrl; aLink.target = '_blank'; aLink.rel = 'noopener';
+    aLink.className = 'apple-maps-link';
+    aLink.innerHTML = '<span class="lang-es">🍎 Apple</span><span class="lang-en">🍎 Apple</span>';
+
+    // Wrap both in a container
+    var wrap = document.createElement('div');
+    wrap.className = 'map-links-wrap';
+    link.parentNode.insertBefore(wrap, link);
+    wrap.appendChild(link);
+    wrap.appendChild(aLink);
+  });
+})();
+
+/* ---- Quick View overlay on postcards ---- */
+(function(){
+  function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  document.querySelectorAll('.postcard').forEach(function(card){
+    var nameEl = card.querySelector('.pc-name');
+    var descEs = card.querySelector('.pc-desc.lang-es');
+    var descEn = card.querySelector('.pc-desc.lang-en');
+    var mapLink = card.querySelector('.pc-foot a[href*="maps"]');
+    if (!nameEl) return;
+
+    // Build map links
+    var mapHtml = '';
+    if (mapLink) {
+      var gUrl = mapLink.href;
+      var query = '';
+      try { query = new URL(gUrl).searchParams.get('query') || ''; } catch(e){}
+      var aUrl = query ? 'https://maps.apple.com/?q=' + encodeURIComponent(query) : '';
+      mapHtml = '<div class="pcqv-maps">' +
+        '<a href="' + gUrl + '" target="_blank" rel="noopener" class="google-maps-link"><span class="lang-es">🗺 Google</span><span class="lang-en">🗺 Google</span></a>' +
+        (aUrl ? '<a href="' + aUrl + '" target="_blank" rel="noopener" class="apple-maps-link"><span class="lang-es">🍎 Apple</span><span class="lang-en">🍎 Apple</span></a>' : '') +
+        '</div>';
+    }
+
+    var qv = document.createElement('div');
+    qv.className = 'pc-qv';
+    qv.setAttribute('aria-hidden','true');
+    qv.innerHTML = '<div class="pcqv-inner">' +
+      '<div class="pcqv-name">' + nameEl.innerHTML + '</div>' +
+      (descEs ? '<p class="pcqv-desc lang-es">' + esc(descEs.textContent) + '</p>' : '') +
+      (descEn ? '<p class="pcqv-desc lang-en">' + esc(descEn.textContent) + '</p>' : '') +
+      mapHtml + '</div>';
+    card.appendChild(qv);
+
+    // Mobile: tap to toggle
+    card.addEventListener('click', function(e){
+      if (!window.matchMedia('(hover:none)').matches) return;
+      if (e.target.closest('a')) return;
+      var wasOpen = card.classList.contains('qv-open');
+      document.querySelectorAll('.postcard.qv-open').forEach(function(c){ c.classList.remove('qv-open'); });
+      if (!wasOpen) card.classList.add('qv-open');
+    });
+  });
+})();
+
+/* ---- Accordion: Tips section ---- */
+(function(){
+  var stack = document.querySelector('.tip-stack');
+  if (!stack) return;
+  stack.classList.add('accordion-stack');
+  var tips = Array.from(stack.querySelectorAll('.tip'));
+
+  tips.forEach(function(tip, i){
+    var noEl = tip.querySelector('.tip-no');
+    var titleEl = tip.querySelector('.tip-title');
+    var textEl = tip.querySelector('.tip-text');
+    if (!titleEl || !textEl) return;
+
+    var head = document.createElement('button');
+    head.className = 'acc-head';
+    head.setAttribute('aria-expanded', i === 0 ? 'true' : 'false');
+    head.innerHTML =
+      '<span class="acc-no">' + (noEl ? noEl.textContent : (i+1)+'.') + '</span>' +
+      '<span class="acc-title">' + titleEl.innerHTML + '</span>' +
+      '<span class="acc-icon" aria-hidden="true"></span>';
+
+    var body = document.createElement('div');
+    body.className = 'acc-body';
+    body.setAttribute('aria-hidden', i === 0 ? 'false' : 'true');
+    body.innerHTML = '<div class="acc-text">' + textEl.innerHTML + '</div>';
+    body.style.maxHeight = i === 0 ? body.scrollHeight + 300 + 'px' : '0';
+
+    tip.classList.add('acc-item');
+    tip.innerHTML = '';
+    tip.appendChild(head);
+    tip.appendChild(body);
+
+    head.addEventListener('click', function(){
+      var open = head.getAttribute('aria-expanded') === 'true';
+      stack.querySelectorAll('.acc-head').forEach(function(h){
+        h.setAttribute('aria-expanded','false');
+        var b = h.nextElementSibling;
+        if (b){ b.style.maxHeight = '0'; b.setAttribute('aria-hidden','true'); }
+      });
+      if (!open){
+        head.setAttribute('aria-expanded','true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.setAttribute('aria-hidden','false');
+      }
+    });
+  });
+})();
+
+/* ---- Accordion: Servicios section ---- */
+(function(){
+  var sec = document.getElementById('servicios');
+  if (!sec) return;
+  var grid = sec.querySelector('.postcards');
+  if (!grid) return;
+
+  var accStack = document.createElement('div');
+  accStack.className = 'tip-stack accordion-stack';
+
+  Array.from(grid.querySelectorAll('.postcard')).forEach(function(card, i){
+    var nameEl = card.querySelector('.pc-name');
+    var descEs = card.querySelector('.pc-desc.lang-es');
+    var descEn = card.querySelector('.pc-desc.lang-en');
+    var metaEl = card.querySelector('.pc-meta');
+    var mapLink = card.querySelector('.pc-foot a[href*="maps"]');
+    var stampLab = card.querySelector('.pc-stamp .lab');
+    if (!nameEl) return;
+
+    var item = document.createElement('div');
+    item.className = 'tip acc-item';
+
+    var head = document.createElement('button');
+    head.className = 'acc-head';
+    head.setAttribute('aria-expanded', 'false');
+    head.innerHTML =
+      '<span class="acc-no serv-ico">' + (stampLab ? stampLab.textContent : '') + '</span>' +
+      '<span class="acc-title">' + nameEl.innerHTML + '</span>' +
+      '<span class="acc-icon" aria-hidden="true"></span>';
+
+    var bodyContent = '<div class="acc-text">';
+    if (metaEl) bodyContent += '<div class="acc-meta">' + metaEl.innerHTML + '</div>';
+    if (descEs) bodyContent += '<p class="lang-es">' + descEs.innerHTML + '</p>';
+    if (descEn) bodyContent += '<p class="lang-en">' + descEn.innerHTML + '</p>';
+    if (mapLink) {
+      var gUrl = mapLink.href;
+      var query = '';
+      try { query = new URL(gUrl).searchParams.get('query') || ''; } catch(e){}
+      var aUrl = query ? 'https://maps.apple.com/?q=' + encodeURIComponent(query) : '';
+      bodyContent += '<div class="map-links-wrap">' +
+        '<a href="' + gUrl + '" target="_blank" rel="noopener" class="google-maps-link"><span class="lang-es">🗺 Google Maps</span><span class="lang-en">🗺 Google Maps</span></a>' +
+        (aUrl ? '<a href="' + aUrl + '" target="_blank" rel="noopener" class="apple-maps-link"><span class="lang-es">🍎 Apple Maps</span><span class="lang-en">🍎 Apple Maps</span></a>' : '') +
+        '</div>';
+    }
+    bodyContent += '</div>';
+
+    var body = document.createElement('div');
+    body.className = 'acc-body';
+    body.setAttribute('aria-hidden','true');
+    body.style.maxHeight = '0';
+    body.innerHTML = bodyContent;
+
+    item.appendChild(head); item.appendChild(body);
+    accStack.appendChild(item);
+
+    head.addEventListener('click', function(){
+      var open = head.getAttribute('aria-expanded') === 'true';
+      accStack.querySelectorAll('.acc-head').forEach(function(h){
+        h.setAttribute('aria-expanded','false');
+        var b = h.nextElementSibling;
+        if (b){ b.style.maxHeight = '0'; b.setAttribute('aria-hidden','true'); }
+      });
+      if (!open){
+        head.setAttribute('aria-expanded','true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.setAttribute('aria-hidden','false');
+      }
+    });
+  });
+
+  grid.parentNode.insertBefore(accStack, grid);
+  grid.style.display = 'none';
 })();
 
 /* ---- Read-progress bar ---- */
