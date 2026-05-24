@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Casa Palma — Guía Local de Cozumel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&amp;family=DM+Sans:wght@300;400;500;600&amp;family=Caveat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+/* ============ RESET ============ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* ============ TOKENS ============ */
+:root{
+  --mar:#0E4F5A; --mar-deep:#073841;
+  --cielo:#6FB7B8; --cielo-pale:#D4ECEC;
+  --arena:#E8D6B0; --arena-deep:#C8AE7E;
+  --papel:#F6EFE0; --papel-warm:#FBF5E8;
+  --coral:#D9583D; --coral-deep:#A8341D; --coral-pale:#F5D8CC;
+  --selva:#3D5A3A; --selva-pale:#D8E2CF;
+  --noche:#101B22; --noche-mid:#1E3038;
+  --sol:#D6A33D; --sol-pale:#F3E2B0;
+  --ink:#1B2426; --ink-soft:#4B5A60;
+  --rule:rgba(27,36,38,0.14);
+  --sec-intro-bg:#F6EFE0;
+  --sec-taq-bg:#F4DCC8;
+  --sec-rest-bg:#D6E8E8;
+  --sec-ant-bg:#F2E3B6;
+  --sec-dia-bg:#EFE5CC;
+  --sec-pla-bg:#BFDDDD;
+  --sec-tour-bg:#D6DEC4;
+  --sec-noc-bg:#101B22;
+  --sec-com-bg:#EBD2D8;
+  --sec-serv-bg:#DDE3D3;
+  --sec-trans-bg:#E3D6BE;
+  --sec-tips-bg:#F4E5B8;
+}
+
+body{
+  font-family:'DM Sans',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  background:var(--papel); color:var(--ink);
+  font-size:15px; line-height:1.55; font-weight:400;
+  padding-bottom:80px;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+
+/* ============ LANGUAGE ============ */
+.lang-en .lang-es{display:none !important}
+.lang-es .lang-en{display:none !important}
+.lang-toggle{
+  position:absolute;top:1.5rem;right:1.75rem;z-index:10;
+  display:inline-flex;background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.3);border-radius:999px;padding:3px;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.lang-btn{
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:0.18em;color:rgba(255,255,255,0.55);
+  padding:7px 14px;border-radius:999px;transition:all .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.lang-btn.active{background:rgba(255,255,255,0.92);color:var(--mar-deep)}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;background:var(--mar-deep);color:#F6EFE0;
+  padding:3rem 2.5rem 3rem;min-height:88vh;
+  display:flex;flex-direction:column;justify-content:space-between;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(214,163,61,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(111,183,184,0.22) 0%, transparent 60%),
+    linear-gradient(180deg,var(--mar-deep) 0%,var(--mar) 65%,#082E36 100%);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.hero > *{position:relative;z-index:1}
+
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.hero-mark{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.28em;
+  text-transform:uppercase;color:rgba(246,239,224,0.7);font-weight:500;
+}
+.hero-mark::before{content:"";width:36px;height:1px;background:rgba(246,239,224,0.5)}
+
+.hero-center{padding:3rem 0 2rem;max-width:1100px}
+.hero-eyebrow{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:18px;color:var(--sol);letter-spacing:0.02em;margin-bottom:1.25rem;
+}
+.hero-title{
+  font-family:'Fraunces',serif;font-weight:300;
+  font-size:clamp(64px, 14vw, 200px);
+  line-height:0.92;letter-spacing:-0.03em;color:#FBF5E8;
+  font-variation-settings:"opsz" 144;
+}
+.hero-title em{font-style:italic;font-weight:400;color:var(--sol-pale)}
+.hero-rule{
+  display:flex;align-items:center;gap:1.5rem;margin:1.5rem 0 1.25rem;
+  color:rgba(246,239,224,0.5);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+}
+.hero-rule .line{flex:1;height:1px;background:rgba(246,239,224,0.25);max-width:240px}
+.hero-lede{
+  font-family:'Fraunces',serif;font-weight:300;font-style:italic;
+  font-size:clamp(20px, 2.4vw, 30px);line-height:1.35;
+  max-width:680px;color:rgba(246,239,224,0.92);
+}
+.hero-bottom{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  gap:2rem;flex-wrap:wrap;padding-top:2rem;
+  border-top:1px solid rgba(246,239,224,0.15);
+}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap}
+.hero-meta-item{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(246,239,224,0.55)}
+.hero-meta-item b{display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:18px;letter-spacing:0;text-transform:none;color:var(--sol-pale);margin-top:4px}
+.hero-signature{
+  font-family:'Caveat',cursive;font-size:30px;line-height:1;
+  color:var(--sol-pale);transform:rotate(-3deg);transform-origin:right;
+}
+.palm{position:absolute;opacity:0.13;color:var(--sol-pale);pointer-events:none;z-index:0}
+.palm-1{top:-30px;right:-40px;width:280px}
+.palm-2{bottom:-60px;left:-50px;width:220px;transform:scaleX(-1)}
+
+/* ============ NAV ============ */
+.nav-wrap{
+  position:sticky;top:0;z-index:20;
+  background:rgba(246,239,224,0.92);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-inner{
+  display:flex;align-items:center;gap:2px;
+  padding:0.7rem 1.5rem;overflow-x:auto;white-space:nowrap;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  max-width:1280px;margin:0 auto;
+}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-brand{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+  font-size:18px;color:var(--mar-deep);margin-right:1rem;flex-shrink:0;
+}
+.nav-item{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 13px;font-size:12px;font-weight:500;
+  color:var(--ink-soft);letter-spacing:0.02em;
+  border-radius:999px;transition:all .15s;flex-shrink:0;
+  -webkit-tap-highlight-color:transparent;
+}
+.nav-item .ico{
+  font-size:15px;line-height:1;
+  filter:saturate(0.92);
+}
+.nav-item:hover{color:var(--ink);background:rgba(27,36,38,0.05)}
+.nav-item.active{background:var(--ink);color:var(--papel-warm)}
+
+/* ============ SECTION CHROME ============ */
+.section{position:relative;padding:5.5rem 2rem 5rem}
+.section-inner{max-width:1080px;margin:0 auto}
+.chapter-head{
+  display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:end;
+  padding-bottom:2.5rem;margin-bottom:3rem;border-bottom:1px solid rgba(27,36,38,0.18);
+}
+.chapter-no{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:clamp(110px,16vw,200px);line-height:0.78;letter-spacing:-0.04em;
+  color:var(--ink);opacity:0.92;font-variation-settings:"opsz" 144;
+}
+.chapter-title-block{padding-bottom:0.5rem}
+.chapter-kicker{
+  font-size:11px;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:0.75rem;display:flex;align-items:center;gap:10px;
+}
+.chapter-kicker::after{content:"";flex:1;height:1px;background:currentColor;opacity:.35;max-width:80px}
+.chapter-title{
+  font-family:'Fraunces',serif;font-weight:300;
+  font-size:clamp(40px,6vw,72px);line-height:0.98;letter-spacing:-0.02em;
+  color:var(--ink);font-variation-settings:"opsz" 144;
+}
+.chapter-title em{font-style:italic;font-weight:400}
+.chapter-lede{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:clamp(17px,1.6vw,22px);line-height:1.45;color:var(--ink-soft);
+  margin-top:1.25rem;max-width:560px;
+}
+
+.sec-intro{background:var(--sec-intro-bg)}
+.sec-taq{background:var(--sec-taq-bg)}
+.sec-taq .chapter-no, .sec-taq .chapter-title{color:var(--coral-deep)}
+.sec-rest{background:var(--sec-rest-bg)}
+.sec-rest .chapter-no, .sec-rest .chapter-title{color:var(--mar-deep)}
+.sec-ant{background:var(--sec-ant-bg)}
+.sec-ant .chapter-no, .sec-ant .chapter-title{color:#8E5A0A}
+.sec-dia{background:var(--sec-dia-bg)}
+.sec-dia .chapter-no, .sec-dia .chapter-title{color:var(--mar-deep)}
+.sec-pla{background:var(--sec-pla-bg)}
+.sec-pla .chapter-no, .sec-pla .chapter-title{color:var(--mar-deep)}
+.sec-tour{background:var(--sec-tour-bg)}
+.sec-tour .chapter-no, .sec-tour .chapter-title{color:#2D4A2A}
+.sec-noc{background:var(--sec-noc-bg);color:#EDE0C4}
+.sec-noc .chapter-no, .sec-noc .chapter-title{color:#F2D8A4}
+.sec-noc .chapter-kicker, .sec-noc .chapter-lede{color:rgba(237,224,196,0.7)}
+.sec-noc .chapter-head{border-bottom-color:rgba(237,224,196,0.2)}
+.sec-com{background:var(--sec-com-bg)}
+.sec-com .chapter-no, .sec-com .chapter-title{color:#7C2542}
+.sec-serv{background:var(--sec-serv-bg)}
+.sec-serv .chapter-no, .sec-serv .chapter-title{color:#2D4A2A}
+.sec-trans{background:var(--sec-trans-bg)}
+.sec-trans .chapter-no, .sec-trans .chapter-title{color:#5A4524}
+.sec-tips{background:var(--sec-tips-bg)}
+.sec-tips .chapter-no, .sec-tips .chapter-title{color:#8E5A0A}
+
+/* ============ INTRO ============ */
+.intro-grid{display:grid;grid-template-columns:5fr 7fr;gap:3rem;align-items:start}
+.intro-photo{
+  position:relative;aspect-ratio:4/5;background:var(--arena);
+  border:1px solid rgba(27,36,38,0.15);overflow:hidden;
+  box-shadow:0 30px 60px -30px rgba(14,79,90,0.35);
+}
+.intro-photo img{width:100%;height:100%;object-fit:cover}
+.intro-photo .ph{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:8px;
+  background:
+    repeating-linear-gradient(135deg,
+      transparent 0px,transparent 14px,
+      rgba(14,79,90,0.06) 14px,rgba(14,79,90,0.06) 15px),
+    linear-gradient(160deg,var(--cielo-pale),var(--arena));
+  color:var(--mar-deep);
+}
+.intro-photo .ph-label{
+  font-family:'DM Sans',monospace;font-size:10px;letter-spacing:0.25em;
+  text-transform:uppercase;font-weight:600;
+}
+.intro-photo .ph-sub{font-family:'Fraunces',serif;font-style:italic;font-size:18px;font-weight:400;opacity:.7}
+.intro-photo-caption{
+  font-family:'Caveat',cursive;font-size:24px;color:var(--mar-deep);
+  margin-top:1rem;transform:rotate(-1.2deg);transform-origin:left;
+}
+.intro-text > p{
+  font-family:'Fraunces',serif;font-weight:300;
+  font-size:clamp(17px,1.7vw,21px);line-height:1.55;
+  margin-bottom:1.25rem;color:var(--ink);
+}
+.intro-text > p:first-child::first-letter{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+  font-size:5.5em;line-height:0.85;float:left;
+  padding:6px 12px 0 0;color:var(--coral);
+}
+.intro-text strong{font-weight:500;color:var(--mar-deep);font-style:italic}
+.intro-signature{
+  font-family:'Caveat',cursive;font-size:34px;color:var(--coral);
+  margin-top:1.5rem;line-height:1.1;
+}
+
+.house-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem}
+.house-card{
+  background:#FBF5E8;border:1px solid var(--rule);
+  padding:1.5rem 1.6rem;border-radius:2px;position:relative;
+}
+.house-card-head{
+  font-family:'Fraunces',serif;font-weight:400;font-size:20px;
+  color:var(--mar-deep);margin-bottom:1rem;display:flex;align-items:center;gap:10px;
+  padding-bottom:0.75rem;border-bottom:1px dotted var(--rule);
+}
+.house-card-icon{
+  display:inline-flex;width:32px;height:32px;align-items:center;justify-content:center;
+  background:var(--cielo-pale);border-radius:50%;font-size:16px;
+}
+.house-row{
+  display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-soft);padding:5px 0;
+}
+.house-row b{color:var(--ink);font-weight:500}
+.wifi-pass{
+  font-family:'DM Mono','SF Mono',monospace;background:var(--mar-deep);color:var(--sol-pale);
+  padding:3px 10px;border-radius:3px;letter-spacing:0.04em;font-size:13px;font-weight:500;user-select:all;
+}
+.copy-btn{
+  background:var(--mar);color:var(--papel-warm);
+  font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  padding:6px 12px;border-radius:3px;transition:background .15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.copy-btn:hover,.copy-btn:active{background:var(--mar-deep)}
+
+/* ============ POSTCARDS ============ */
+.postcards{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:1.5rem 1.25rem;margin-top:1rem;
+}
+.postcard{
+  position:relative;background:#FBF5E8;
+  border:1px solid rgba(27,36,38,0.12);
+  display:flex;flex-direction:column;
+  transition:transform .25s ease,box-shadow .25s ease;
+  border-radius:2px;
+}
+.postcard:hover{transform:translateY(-3px);box-shadow:0 18px 40px -20px rgba(14,79,90,0.35)}
+.pc-img{
+  position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--cielo-pale);
+  border-bottom:1px dashed rgba(27,36,38,0.18);
+}
+.pc-img img{width:100%;height:100%;object-fit:cover}
+.pc-img .ph{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background-image:
+    repeating-linear-gradient(135deg,
+      transparent 0px,transparent 10px,
+      rgba(14,79,90,0.07) 10px,rgba(14,79,90,0.07) 11px);
+  background-color:var(--cielo-pale);color:var(--mar-deep);
+}
+.pc-img .ph-label{
+  font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:0.22em;
+  text-transform:uppercase;font-weight:600;text-align:center;padding:8px 14px;
+  border:1px solid currentColor;border-radius:2px;background:rgba(251,245,232,0.4);
+}
+.pc-stamp{
+  position:absolute;top:10px;right:10px;
+  background:var(--papel-warm);border:1px dashed var(--ink);
+  width:46px;height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:var(--ink);
+  z-index:2;line-height:1;text-align:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+.pc-stamp .n{font-size:20px;letter-spacing:-0.02em}
+.pc-stamp .lab{font-size:7px;letter-spacing:0.15em;text-transform:uppercase;font-style:normal;font-family:'DM Sans',sans-serif;font-weight:600;margin-top:2px;opacity:.7}
+.pc-body{padding:1.1rem 1.25rem 1.25rem;display:flex;flex-direction:column;gap:0.65rem;flex:1}
+.pc-meta{
+  display:flex;align-items:center;justify-content:space-between;gap:0.5rem;
+  font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;
+}
+.pc-meta .hrs{display:inline-flex;align-items:center;gap:6px}
+.pc-meta .hrs::before{content:"●";color:var(--coral);font-size:10px}
+.pc-name{
+  font-family:'Fraunces',serif;font-weight:400;font-size:22px;
+  line-height:1.15;color:var(--ink);letter-spacing:-0.005em;
+  font-variation-settings:"opsz" 36;
+}
+.pc-name em{font-style:italic;color:var(--coral)}
+.pc-desc{font-size:13.5px;line-height:1.55;color:var(--ink-soft);font-weight:400}
+.pc-desc em{font-family:'Fraunces',serif;font-style:italic;color:var(--ink)}
+.pc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:0.5rem}
+.pc-tag{
+  font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;
+  padding:4px 9px;border-radius:2px;background:var(--cielo-pale);color:var(--mar-deep);
+}
+.pc-tag.coral{background:var(--coral-pale);color:var(--coral-deep)}
+.pc-tag.sand{background:var(--sol-pale);color:#8E5A0A}
+.pc-tag.jungle{background:var(--selva-pale);color:#2D4A2A}
+.pc-tag.fav{background:var(--coral);color:#FBF5E8}
+.pc-foot{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.75rem 1.25rem;border-top:1px dotted rgba(27,36,38,0.2);
+  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;
+  color:var(--mar-deep);
+}
+.pc-foot a:hover{color:var(--coral)}
+.pc-foot .arrow{display:inline-block;transition:transform .2s}
+.pc-foot a:hover .arrow{transform:translateX(3px)}
+
+/* Night variant */
+.sec-noc .postcard{background:#1E2F38;border-color:rgba(237,224,196,0.18)}
+.sec-noc .pc-name{color:#F2D8A4}
+.sec-noc .pc-name em{color:#E8A8FF}
+.sec-noc .pc-desc{color:rgba(237,224,196,0.7)}
+.sec-noc .pc-desc em{color:#F2D8A4}
+.sec-noc .pc-meta{color:rgba(237,224,196,0.55)}
+.sec-noc .pc-tag{background:rgba(237,224,196,0.12);color:#F2D8A4}
+.sec-noc .pc-foot{border-top-color:rgba(237,224,196,0.18);color:#F2D8A4}
+.sec-noc .pc-img .ph{background-color:#243842;color:#F2D8A4;background-image:repeating-linear-gradient(135deg,transparent 0px,transparent 10px,rgba(242,216,164,0.07) 10px,rgba(242,216,164,0.07) 11px)}
+.sec-noc .pc-img{border-bottom-color:rgba(237,224,196,0.18)}
+.sec-noc .pc-stamp{background:#0D161B;color:#F2D8A4;border-color:#F2D8A4}
+
+/* ============ TIMELINE (UN DÍA PERFECTO) ============ */
+.day-intro{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:clamp(17px,1.6vw,21px);line-height:1.5;color:var(--ink-soft);
+  max-width:640px;margin-bottom:2.5rem;
+}
+.timeline{position:relative;padding-left:0}
+.timeline::before{
+  content:"";position:absolute;top:8px;bottom:8px;left:97px;width:1px;
+  background:linear-gradient(180deg,var(--sol) 0%,var(--coral) 50%,var(--mar) 100%);
+  opacity:0.4;
+}
+.tl-item{
+  display:grid;grid-template-columns:90px 1fr;gap:2rem;
+  padding:1.25rem 0;position:relative;
+}
+.tl-item::before{
+  content:"";position:absolute;left:91px;top:1.8rem;width:13px;height:13px;
+  border-radius:50%;background:var(--papel-warm);border:2px solid var(--coral);
+  box-shadow:0 0 0 4px var(--sec-dia-bg);
+}
+.tl-time{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:32px;color:var(--mar-deep);line-height:1;text-align:right;
+  font-variation-settings:"opsz" 72;padding-top:0.5rem;
+}
+.tl-time .ampm{font-size:14px;color:var(--ink-soft);font-style:normal;font-weight:400;letter-spacing:0.08em;display:block;margin-top:4px}
+.tl-content{padding:0.25rem 0 0.25rem 1.5rem}
+.tl-kicker{
+  font-size:10px;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--coral);font-weight:600;margin-bottom:6px;
+}
+.tl-place{
+  font-family:'Fraunces',serif;font-weight:400;font-size:24px;
+  color:var(--ink);margin-bottom:6px;line-height:1.15;
+}
+.tl-place em{font-style:italic;color:var(--coral)}
+.tl-where{font-size:12px;color:var(--ink-soft);font-weight:500;margin-bottom:8px;letter-spacing:0.02em}
+.tl-where a{color:var(--mar);border-bottom:1px dotted var(--mar)}
+.tl-note{font-size:14px;color:var(--ink-soft);line-height:1.55;max-width:520px}
+.tl-note em{font-family:'Fraunces',serif;font-style:italic;color:var(--ink)}
+
+/* ============ TIPS ============ */
+.tip-stack{display:flex;flex-direction:column;gap:1rem}
+.tip{
+  background:#FBF5E8;border:1px solid var(--rule);
+  padding:1.4rem 1.6rem;display:grid;grid-template-columns:auto 1fr;gap:1.25rem;
+  border-left:4px solid var(--coral);border-radius:2px;
+}
+.tip-no{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;
+  font-size:46px;line-height:1;color:var(--coral);opacity:0.9;
+  font-variation-settings:"opsz" 72;
+}
+.tip-title{
+  font-family:'Fraunces',serif;font-weight:400;font-size:20px;color:var(--ink);
+  margin-bottom:6px;line-height:1.2;
+}
+.tip-text{font-size:14px;line-height:1.6;color:var(--ink-soft)}
+.tip-text em{font-family:'Fraunces',serif;font-style:italic;color:var(--ink)}
+
+.note-box{
+  margin-top:2rem;padding:1.25rem 1.5rem;border-radius:2px;
+  background:#FAEBA9;border:1px solid rgba(142,90,10,0.2);
+  font-size:14px;line-height:1.6;color:#5A3F08;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.note-box strong{font-weight:600;color:#3D2A05}
+
+/* ============ FOOTER ============ */
+.footer{
+  background:var(--mar-deep);color:#F6EFE0;padding:5rem 2rem 4rem;
+  text-align:center;position:relative;overflow:hidden;
+}
+.footer::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%, rgba(214,163,61,0.15) 0%, transparent 50%);
+}
+.footer > *{position:relative}
+.footer-mark{
+  font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.28em;
+  text-transform:uppercase;color:rgba(246,239,224,0.5);margin-bottom:2rem;
+  display:flex;align-items:center;justify-content:center;gap:12px;
+}
+.footer-mark::before,.footer-mark::after{content:"";width:60px;height:1px;background:rgba(246,239,224,0.3)}
+.footer-headline{
+  font-family:'Fraunces',serif;font-weight:300;font-style:italic;
+  font-size:clamp(28px,5vw,48px);line-height:1.15;
+  max-width:780px;margin:0 auto 2rem;color:#FBF5E8;letter-spacing:-0.01em;
+  font-variation-settings:"opsz" 144;
+}
+.footer-headline em{font-style:italic;color:var(--sol-pale)}
+.footer-signature{
+  font-family:'Caveat',cursive;font-size:42px;color:var(--sol-pale);
+  margin-bottom:0.5rem;line-height:1;
+}
+.footer-sub{
+  font-size:12px;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(246,239,224,0.55);
+}
+.footer-divider{
+  display:flex;justify-content:center;align-items:center;gap:18px;
+  margin:3rem auto 2rem;color:rgba(246,239,224,0.4);font-size:14px;
+  font-family:'Fraunces',serif;font-style:italic;
+}
+.footer-divider::before,.footer-divider::after{content:"";flex:1;height:1px;background:rgba(246,239,224,0.2);max-width:140px}
+.footer-meta{
+  display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;
+  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(246,239,224,0.5);
+}
+.footer-meta b{display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none;font-size:15px;color:var(--sol-pale);margin-top:6px}
+
+/* ============ FOOTER MINI ============ */
+.footer-mini{
+  background:var(--mar-deep);color:rgba(246,239,224,0.55);
+  padding:1.5rem 1.5rem 2rem;text-align:center;
+}
+.footer-mini-inner{
+  font-size:10.5px;letter-spacing:0.28em;text-transform:uppercase;font-weight:500;
+}
+
+/* ============ QUICK BAR ============ */
+.quick-bar{
+  position:fixed;bottom:1.1rem;left:50%;transform:translateX(-50%);
+  background:rgba(13,22,28,0.94);
+  backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+  display:flex;align-items:center;gap:2px;
+  padding:5px 5px 5px 5px;border-radius:999px;z-index:40;
+  border:1px solid rgba(246,239,224,0.08);
+  box-shadow:
+    0 22px 50px -18px rgba(0,0,0,0.6),
+    0 4px 12px rgba(0,0,0,0.2),
+    inset 0 1px 0 rgba(246,239,224,0.05);
+}
+.qa-divider{
+  width:1px;height:20px;background:rgba(246,239,224,0.16);margin:0 5px;
+  align-self:center;
+}
+.qa-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  height:40px;min-width:40px;padding:0;
+  border-radius:999px;
+  color:rgba(246,239,224,0.86);
+  font-family:'DM Sans',sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:0.14em;
+  transition:background .15s ease, color .15s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.qa-btn .ico{font-size:17px;line-height:1}
+.qa-btn:hover,.qa-btn:active{background:rgba(246,239,224,0.1);color:#FBF5E8}
+.qa-btn.icon-only{width:40px}
+.qa-btn.lang-switch{padding:0 14px;font-weight:700;letter-spacing:0.18em;color:var(--sol-pale)}
+.qa-btn.lang-switch:hover{background:rgba(246,239,224,0.1);color:#FBF5E8}
+.qa-btn.sos{padding:0 14px 0 12px;background:rgba(217,88,61,0.18);color:#FFB099}
+.qa-btn.sos:hover{background:rgba(217,88,61,0.36);color:#FBF5E8}
+.qa-btn.sos .ico{font-size:15px}
+
+/* ============ MODALS ============ */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(16,27,34,0.65);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  z-index:60;display:none;align-items:center;justify-content:center;padding:1.5rem;
+}
+.modal-overlay.active{display:flex;animation:fadeIn .2s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-box{
+  background:var(--papel-warm);border-radius:4px;
+  padding:2.25rem 2rem;max-width:420px;width:100%;position:relative;
+  animation:slideUp .25s ease;
+  border:1px solid rgba(27,36,38,0.1);box-shadow:0 30px 70px -20px rgba(0,0,0,0.4);
+}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{
+  position:absolute;top:14px;right:14px;font-size:22px;color:var(--ink-soft);
+  width:36px;height:36px;border-radius:50%;transition:all .15s;
+  display:inline-flex;align-items:center;justify-content:center;line-height:1;
+}
+.modal-close:hover{background:rgba(27,36,38,0.06);color:var(--ink)}
+.modal-title{
+  font-family:'Fraunces',serif;font-weight:300;font-size:32px;
+  color:var(--mar-deep);margin-bottom:1.5rem;letter-spacing:-0.01em;line-height:1;
+  padding-bottom:1rem;border-bottom:1px solid var(--rule);
+}
+.modal-row{
+  display:flex;align-items:flex-start;gap:12px;font-size:14px;
+  padding:10px 0;line-height:1.5;color:var(--ink);
+}
+.modal-row .ico{font-size:16px;flex-shrink:0;width:24px;text-align:center;color:var(--mar)}
+.modal-row b{font-weight:500;color:var(--mar-deep)}
+.modal-row a{color:var(--coral);font-weight:500;border-bottom:1px solid rgba(217,88,61,0.3)}
+.modal-row a:hover{border-bottom-color:var(--coral)}
+.modal-divider{height:1px;background:var(--rule);margin:0.75rem 0}
+.modal-note{
+  font-size:12px;line-height:1.5;color:var(--ink-soft);font-style:italic;
+  font-family:'Fraunces',serif;font-weight:300;
+  background:var(--cielo-pale);padding:0.9rem 1.1rem;border-radius:3px;margin-top:1.25rem;
+}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:880px){
+  .intro-grid{grid-template-columns:1fr;gap:2rem}
+  .intro-photo{max-width:380px}
+  .chapter-head{grid-template-columns:1fr;gap:0.75rem}
+  .chapter-no{font-size:90px}
+  .timeline::before{left:67px}
+  .tl-item::before{left:61px}
+  .tl-item{grid-template-columns:60px 1fr;gap:1.25rem}
+  .tl-time{font-size:22px}
+  .tl-time .ampm{font-size:11px}
+  .tl-content{padding-left:0.75rem}
+  .footer-meta{gap:1.25rem}
+}
+@media(max-width:600px){
+  body{font-size:14px;padding-bottom:96px}
+  .hero{padding:2rem 1.5rem 2.5rem;min-height:78vh}
+  .hero-bottom{flex-direction:column;align-items:flex-start;gap:1.25rem}
+  .hero-meta{gap:1.25rem}
+  .lang-toggle{top:1rem;right:1rem}
+  .nav-inner{padding:0.6rem 1rem}
+  .nav-brand{font-size:15px;margin-right:0.5rem}
+  .nav-item{padding:6px 10px;font-size:11px}
+  .section{padding:3.5rem 1.25rem 3.5rem}
+  .chapter-head{padding-bottom:1.5rem;margin-bottom:2rem}
+  .chapter-no{font-size:72px}
+  .chapter-title{font-size:36px}
+  .house-grid{grid-template-columns:1fr}
+  .postcards{grid-template-columns:1fr;gap:1rem}
+  .quick-bar{left:50%;right:auto;transform:translateX(-50%);padding:4px;gap:1px}
+  .qa-btn{height:38px;min-width:38px}
+  .qa-btn.icon-only{width:38px}
+  .qa-btn .ico{font-size:16px}
+  .qa-btn.lang-switch{padding:0 12px;font-size:10.5px}
+  .qa-btn.sos{padding:0 12px;font-size:10.5px}
+  .qa-divider{margin:0 3px}
+  .modal-box{padding:1.75rem 1.4rem}
+  .modal-title{font-size:26px}
+  .palm{display:none}
+  .footer{padding:3.5rem 1.5rem}
+  .footer-headline{font-size:26px}
+  .footer-signature{font-size:34px}
+  .tl-time{font-size:18px;padding-top:0.25rem}
+}
+@media(max-width:430px){
+  .hero-rule{display:none}
+  .hero-center{padding-top:1.5rem}
+  .hero-lede{font-size:17px}
+  .intro-photo{max-width:none}
+  .pc-name{font-size:19px}
+  .chapter-title{font-size:30px}
+  .chapter-lede{font-size:15px}
+  .pc-stamp{width:40px;height:48px}
+  .pc-stamp .n{font-size:17px}
+}
+
+/* ============ READ PROGRESS ============ */
+#rp{
+  position:fixed;top:0;left:0;height:3px;width:0%;z-index:100;
+  pointer-events:none;
+  background:linear-gradient(90deg,var(--cielo) 0%,var(--coral) 55%,var(--sol) 100%);
+  border-radius:0 2px 0 0;transition:width .08s linear;
+}
+
+/* ============ SCROLL REVEAL ============ */
+@media(prefers-reduced-motion:no-preference){
+  .rv{
+    opacity:0;transform:translateY(26px);
+    transition:opacity .65s ease,transform .65s cubic-bezier(.22,.68,0,1.08);
+  }
+  .rv.on{opacity:1;transform:none}
+}
+
+/* ============ HERO SCROLL HINT ============ */
+.hero-hint{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  z-index:3;display:flex;flex-direction:column;align-items:center;gap:6px;
+  pointer-events:none;transition:opacity .4s;
+}
+.hero-hint .hint-line{
+  width:1px;height:38px;
+  background:linear-gradient(180deg,rgba(246,239,224,0.6) 0%,rgba(246,239,224,0) 100%);
+  animation:hintDrop 2.4s ease-in-out infinite;
+}
+.hero-hint .hint-label{
+  font-size:9px;letter-spacing:0.24em;text-transform:uppercase;
+  font-weight:600;color:rgba(246,239,224,0.4);
+}
+@keyframes hintDrop{
+  0%{transform:scaleY(0);transform-origin:top;opacity:0}
+  40%{opacity:1}
+  80%{transform:scaleY(1);transform-origin:top;opacity:1}
+  100%{transform:scaleY(1);transform-origin:bottom;opacity:0}
+}
+@media(max-width:600px){.hero-hint{display:none}}
+
+/* ============ HERO WAVE ============ */
+.hero-wave{
+  position:absolute;bottom:-1px;left:0;right:0;
+  z-index:1;line-height:0;pointer-events:none;
+}
+.hero-wave svg{display:block;width:100%;height:auto}
+
+/* ============ TOC RAIL ============ */
+.toc-rail{
+  position:fixed;right:1.1rem;top:50%;transform:translateY(-50%);
+  z-index:35;display:flex;flex-direction:column;gap:3px;
+  opacity:0;transition:opacity .5s;
+}
+.toc-rail.show{opacity:1}
+@media(max-width:1280px){.toc-rail{display:none}}
+.toc-node{
+  display:flex;align-items:center;justify-content:flex-end;gap:10px;
+  cursor:pointer;padding:5px 0;
+  -webkit-tap-highlight-color:transparent;text-decoration:none;color:inherit;
+}
+.toc-node-text{
+  font-family:'DM Sans',sans-serif;font-size:9.5px;letter-spacing:0.14em;
+  text-transform:uppercase;font-weight:600;color:var(--ink-soft);
+  white-space:nowrap;
+  opacity:0;transform:translateX(8px);
+  transition:opacity .18s,transform .18s,color .18s;
+}
+.toc-node:hover .toc-node-text,.toc-node.cur .toc-node-text{opacity:1;transform:none}
+.toc-node.cur .toc-node-text{color:var(--coral)}
+.toc-pip{
+  width:7px;height:7px;border-radius:50%;flex-shrink:0;
+  background:rgba(27,36,38,0.18);
+  transition:background .2s,transform .25s,box-shadow .2s;
+}
+.toc-node:hover .toc-pip{background:var(--ink-soft)}
+.toc-node.cur .toc-pip{
+  background:var(--coral);transform:scale(1.55);
+  box-shadow:0 0 0 3px rgba(217,88,61,0.16);
+}
+.toc-rail.in-dark .toc-pip{background:rgba(246,239,224,0.25)}
+.toc-rail.in-dark .toc-node-text{color:rgba(246,239,224,0.6)}
+.toc-rail.in-dark .toc-node.cur .toc-pip{background:#C89BF0}
+.toc-rail.in-dark .toc-node.cur .toc-node-text{color:#C89BF0}
+
+/* ============ CARD ACCENT ============ */
+.sec-taq .postcard{border-top:3px solid #D96050}
+.sec-rest .postcard{border-top:3px solid #1A7080}
+.sec-ant .postcard{border-top:3px solid #C8902A}
+.sec-pla .postcard{border-top:3px solid #4AACAC}
+.sec-tour .postcard{border-top:3px solid #4A7040}
+.sec-noc .postcard{border-top:3px solid #8C74D4}
+.sec-com .postcard{border-top:3px solid #A04565}
+.sec-serv .postcard{border-top:3px solid #507855}
+.sec-trans .postcard{border-top:3px solid #A08050}
+.postcard:hover{transform:translateY(-4px);box-shadow:0 26px 50px -20px rgba(14,79,90,0.42)}
+
+/* ============ MOBILE NAV IMPROVEMENTS ============ */
+@media(max-width:600px){
+  .nav-item{border-radius:8px}
+  .nav-item.active{
+    background:var(--mar-deep);color:#FBF5E8;
+    box-shadow:0 2px 10px rgba(14,79,90,0.22);
+  }
+  .quick-bar{
+    max-width:calc(100vw - 2rem);
+  }
+}
+
+</style>
+<script type='text/javascript' nonce='CNrGbkphPDNKWqsODk0tcA==' src='https://claude.ai/k8coJJ8Ev7HU-TAqv85tFcs99fDj5bdYGBOHPnJij3refilhOdEs_JbzU7Fd6uWxgERRkuZvAMpLDyCKzn8EscImkV-3lnOt1qS9D1wH3ZSAxcOG6RzJM1xBrz_mbnc1Dw2eR3eN74LxrrTe9B36BaLbnLtFpJ8m1gGzGjsAOpS73C08FnGctWhO9UHJ0PjjiRccVVWK35-FkKPYjDbX0jV8upJSj-kGxlppwPakhUlmuprmZ2XiwgvwJ_eDFI1EOz_-9uS0FF5qDFJS3jenlHBbBhXi4o2vZuXNxDn_e530Ufo6uMdz9gvl57IJ3b6li4IIoBTHdCeIXeRJVixl3v1_nCM-Bb0nAtffOh7UvxCExhvT0rtsShf3smC134MPscdozVIqzIYbxdtPLjI3wtBkNzr5PIRq-nx2XkJb_mKkYu8GCoWaoKydmW2qOUqIKkONpM6Nw8FPFTjyqyC1nxdSLqHgnaJe3yX4AWspLtehUgz3oEaIajz-TpUDQOekosjsXEfomX2pDZBw1nogd9wqLkHP4P9OMx__hfSQfLWX3Hrl3qpPJIDHyKfSsqketXBK'></script></head>
+<body class="lang-es">
+
+<!-- READ PROGRESS ============================================================ -->
+<div id="rp" aria-hidden="true"></div>
+
+<!-- TOC RAIL ============================================================ -->
+<div class="toc-rail" id="toc-rail" aria-hidden="true">
+  <a href="#intro" class="toc-node" data-sec="intro"><span class="toc-node-text"><span class="lang-es">Bienvenida</span><span class="lang-en">Welcome</span></span><span class="toc-pip"></span></a>
+  <a href="#taquerias" class="toc-node" data-sec="taquerias"><span class="toc-node-text"><span class="lang-es">Taquerías</span><span class="lang-en">Tacos</span></span><span class="toc-pip"></span></a>
+  <a href="#restaurantes" class="toc-node" data-sec="restaurantes"><span class="toc-node-text"><span class="lang-es">Restaurantes</span><span class="lang-en">Restaurants</span></span><span class="toc-pip"></span></a>
+  <a href="#antojitos" class="toc-node" data-sec="antojitos"><span class="toc-node-text"><span class="lang-es">Antojitos</span><span class="lang-en">Street eats</span></span><span class="toc-pip"></span></a>
+  <a href="#dia" class="toc-node" data-sec="dia"><span class="toc-node-text"><span class="lang-es">Un día</span><span class="lang-en">Perfect day</span></span><span class="toc-pip"></span></a>
+  <a href="#playas" class="toc-node" data-sec="playas"><span class="toc-node-text"><span class="lang-es">Playas</span><span class="lang-en">Beaches</span></span><span class="toc-pip"></span></a>
+  <a href="#tours" class="toc-node" data-sec="tours"><span class="toc-node-text">Tours</span><span class="toc-pip"></span></a>
+  <a href="#nocturna" class="toc-node" data-sec="nocturna"><span class="toc-node-text"><span class="lang-es">Noche</span><span class="lang-en">Nightlife</span></span><span class="toc-pip"></span></a>
+  <a href="#compras" class="toc-node" data-sec="compras"><span class="toc-node-text"><span class="lang-es">Compras</span><span class="lang-en">Shops</span></span><span class="toc-pip"></span></a>
+  <a href="#servicios" class="toc-node" data-sec="servicios"><span class="toc-node-text"><span class="lang-es">Servicios</span><span class="lang-en">Essentials</span></span><span class="toc-pip"></span></a>
+  <a href="#transporte" class="toc-node" data-sec="transporte"><span class="toc-node-text"><span class="lang-es">Transporte</span><span class="lang-en">Getting around</span></span><span class="toc-pip"></span></a>
+  <a href="#tips" class="toc-node" data-sec="tips"><span class="toc-node-text">Tips</span><span class="toc-pip"></span></a>
+</div>
+
+<!-- HERO ============================================================ -->
+<header class="hero" data-screen-label="Hero">
+  <svg class="palm palm-1" viewbox="0 0 200 200" fill="currentColor" aria-hidden="true">
+    <path d="M100 30 C 95 45, 90 65, 95 85 L 100 100 L 105 85 C 110 65, 105 45, 100 30 Z"></path>
+    <path d="M100 90 C 70 70, 40 75, 30 85 C 45 80, 70 90, 95 100 Z"></path>
+    <path d="M100 90 C 130 70, 160 75, 170 85 C 155 80, 130 90, 105 100 Z"></path>
+    <path d="M100 90 C 75 65, 45 50, 25 50 C 50 60, 75 85, 98 98 Z"></path>
+    <path d="M100 90 C 125 65, 155 50, 175 50 C 150 60, 125 85, 102 98 Z"></path>
+    <path d="M100 100 L 102 200 L 98 200 Z"></path>
+  </svg>
+
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button class="lang-btn active" data-lang="es" onclick="setLang(&#39;es&#39;)">ES</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang(&#39;en&#39;)">EN</button>
+  </div>
+
+  <div class="hero-center">
+    <div class="hero-eyebrow">
+      <span class="lang-es">— una carta desde la isla</span>
+      <span class="lang-en">— a letter from the island</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="lang-es">Bienvenido<br><em>a Cozumel.</em></span>
+      <span class="lang-en">Welcome<br><em>to Cozumel.</em></span>
+    </h1>
+    <div class="hero-rule">
+      <span class="line"></span>
+      <span class="lang-es">Guía Local · Casa Palma</span>
+      <span class="lang-en">Local Guide · Casa Palma</span>
+      <span class="line"></span>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="lang-es">Recomendaciones</span>
+        <span class="lang-en">Curated picks</span>
+        <b>50 <span class="lang-es">lugares</span><span class="lang-en">places</span></b>
+      </div>
+      <div class="hero-meta-item">
+        <span class="lang-es">Capítulos</span>
+        <span class="lang-en">Chapters</span>
+        <b>12</b>
+      </div>
+    </div>
+    <div class="hero-signature">
+      <span class="lang-es">— Victor</span>
+      <span class="lang-en">— Victor</span>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="hero-hint" aria-hidden="true">
+    <div class="hint-line"></div>
+    <div class="hint-label">scroll</div>
+  </div>
+
+  <!-- Wave transition -->
+  <div class="hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 40 C240 64 480 14 720 40 C960 66 1200 20 1440 40 L1440 64 L0 64 Z" fill="#F6EFE0"/>
+    </svg>
+  </div>
+</header>
+
+<!-- NAV ============================================================ -->
+<nav class="nav-wrap" aria-label="Chapters">
+  <div class="nav-inner">
+    <span class="nav-brand">Casa Palma</span>
+    <a href="#intro" class="nav-item ni-intro"><span class="ico">🏡</span><span class="lang-es">Bienvenida</span><span class="lang-en">Welcome</span></a>
+    <a href="#taquerias" class="nav-item ni-taquerias"><span class="ico">🌮</span><span class="lang-es">Taquerías</span><span class="lang-en">Tacos</span></a>
+    <a href="#restaurantes" class="nav-item ni-restaurantes"><span class="ico">🍽️</span><span class="lang-es">Restaurantes</span><span class="lang-en">Restaurants</span></a>
+    <a href="#antojitos" class="nav-item ni-antojitos"><span class="ico">🥪</span><span class="lang-es">Antojitos</span><span class="lang-en">Street Eats</span></a>
+    <a href="#dia" class="nav-item ni-dia"><span class="ico">☀️</span><span class="lang-es">Un día perfecto</span><span class="lang-en">Perfect day</span></a>
+    <a href="#playas" class="nav-item ni-playas"><span class="ico">🏖️</span><span class="lang-es">Playas</span><span class="lang-en">Beaches</span></a>
+    <a href="#tours" class="nav-item ni-tours"><span class="ico">🐠</span>Tours</a>
+    <a href="#nocturna" class="nav-item ni-nocturna"><span class="ico">🌙</span><span class="lang-es">Noche</span><span class="lang-en">Nightlife</span></a>
+    <a href="#compras" class="nav-item ni-compras"><span class="ico">🛍️</span><span class="lang-es">Compras</span><span class="lang-en">Shops</span></a>
+    <a href="#servicios" class="nav-item ni-servicios"><span class="ico">🛍</span><span class="lang-es">Servicios</span><span class="lang-en">Essentials</span></a>
+    <a href="#transporte" class="nav-item ni-transporte"><span class="ico">🛵</span><span class="lang-es">Transporte</span><span class="lang-en">Getting around</span></a>
+    <a href="#tips" class="nav-item ni-tips"><span class="ico">💡</span>Tips</a>
+  </div>
+</nav>
+
+<!-- I — INTRO ============================================================ -->
+<section class="section sec-intro" id="intro" data-screen-label="01 Intro">
+<div class="section-inner">
+  <div class="chapter-head">
+    <div class="chapter-no">I</div>
+    <div class="chapter-title-block">
+      <div class="chapter-kicker"><span class="lang-es">Capítulo uno</span><span class="lang-en">Chapter one</span></div>
+      <h2 class="chapter-title"><span class="lang-es">Tu casa en <em>Cozumel.</em></span><span class="lang-en">Your home in <em>Cozumel.</em></span></h2>
+      <p class="chapter-lede">
+        <span class="lang-es">No somos un hotel. Somos una casa hecha por gente que nació aquí — y tú llegaste a quedarte un rato con nosotros.</span>
+        <span class="lang-en">We're not a hotel. We're a home built by people born here — and you came to stay with us for a while.</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="intro-grid">
+    <div>
+      <figure class="intro-photo">
+        <div class="ph">
+          <span class="ph-label">[ FOTO · CASA PALMA ]</span>
+          <span class="ph-sub"><span class="lang-es">El patio, una tarde cualquiera</span><span class="lang-en">The back patio, a quiet afternoon</span></span>
+        </div>
+      </figure>
+      <div class="intro-photo-caption">
+        <span class="lang-es">↗ Bienvenido a casa.</span>
+        <span class="lang-en">↗ Welcome home.</span>
+      </div>
+    </div>
+
+    <div class="intro-text">
+      <div class="lang-es">
+        <p>Mi padre Victor llegó a Cozumel hace 40 años. Mi madre Alina llegó 25 años después. Yo nací aquí.</p>
+        <p>Esta guía la escribimos nosotros — los lugares a los que vamos, donde comemos, las playas que conocemos. <strong>Bienvenido a Casa Palma, y bienvenido a Cozumel.</strong></p>
+        <p>Adentro vas a encontrar nuestros favoritos para comer, las mejores playas, los tours que valen la pena, dónde comprar, qué hacer de noche y los tips que solo sabe alguien que vive aquí.</p>
+      </div>
+      <div class="lang-en">
+        <p>My father Victor came to Cozumel forty years ago. My mother Alina arrived twenty-five years later. I was born here.</p>
+        <p>This guide is just us — the places we go, where we eat, the beaches we know. <strong>Welcome to Casa Palma, and welcome to Cozumel.</strong></p>
+        <p>Inside you'll find our favorite places to eat, the best beaches, tours worth your time, where to shop, what to do after dark, and the tips only a local would know.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="house-grid">
+    <div class="house-card">
+      <div class="house-card-head"><span class="house-card-icon">📶</span><span class="lang-es">WiFi de la casa</span><span class="lang-en">House WiFi</span></div>
+      <div class="house-row"><b><span class="lang-es">Red:</span><span class="lang-en">Network:</span></b> Casa Palma Guest</div>
+      <div class="house-row" style="gap:10px">
+        <b><span class="lang-es">Clave:</span><span class="lang-en">Password:</span></b>
+        <span class="wifi-pass" id="wifi-pw">CozumelParadise2024</span>
+        <button class="copy-btn" onclick="copyWifi()"><span class="lang-es">Copiar</span><span class="lang-en">Copy</span></button>
+      </div>
+    </div>
+    <div class="house-card">
+      <div class="house-card-head"><span class="house-card-icon">🏠</span><span class="lang-es">Reglas de la casa</span><span class="lang-en">House Rules</span></div>
+      <div class="house-row"><span class="lang-es">Silencio de 10 PM a 8 AM</span><span class="lang-en">Quiet hours: 10 PM – 8 AM</span></div>
+      <div class="house-row"><span class="lang-es">No fumar dentro de la propiedad</span><span class="lang-en">No smoking indoors</span></div>
+      <div class="house-row"><span class="lang-es">Respeta el máximo de personas</span><span class="lang-en">Respect maximum occupancy</span></div>
+      <div class="house-row"><span class="lang-es">No se permiten fiestas</span><span class="lang-en">No parties allowed</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- II — TAQUERÍAS ============================================================ -->
+<section class="section sec-taq" id="taquerias" data-screen-label="02 Taquerias">
+<div class="section-inner">
+  <div class="chapter-head">
+    <div class="chapter-no">II</div>
+    <div class="chapter-title-block">
+      <div class="chapter-kicker"><span class="lang-es">Capítulo dos · Comer</span><span class="lang-en">Chapter two · Eat</span></div>
+      <h2 class="chapter-title"><span class="lang-es">Cinco <em>taquerías.</em></span><span class="lang-en">Five <em>taquerías.</em></span></h2>
+      <p class="chapter-lede"><span class="lang-es">Cinco taquerías que defenderíamos a capa y espada. Empieza por la primera, no te vas a equivocar.</span><span class="lang-en">Five taquerías we'd defend with our lives. Start with the first one — you can't go wrong.</span></p>
+    </div>
+  </div>
+
+  <div class="postcards">
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">01</span><span class="lab">TAQ</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ TZALAM ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Mar–Dom · 1–11 PM</span><span class="lang-en">Tue–Sun · 1–11 PM</span></span><span>$$</span></div>
+        <h3 class="pc-name">Tzalam Taquería</h3>
+        <p class="pc-desc lang-es">Más que una taquería — una experiencia. Tacos, burritos y papas con chuleta o pastor increíbles. Tiene área de niños y un bar con micheladas y cócteles. Para ir en familia o con amigos.</p>
+        <p class="pc-desc lang-en">More than a taco spot — a whole experience. Amazing tacos, burritos, and loaded fries with chuleta or pastor. Kids' area and a full bar with micheladas and cocktails. For families or a night out.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Familiar</span><span class="lang-en">Family</span></span><span class="pc-tag jungle"><span class="lang-es">Área de niños</span><span class="lang-en">Kids area</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Tzalam+Taqueria+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">02</span><span class="lab">TAQ</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ MISTER TACO ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 8 AM–10 PM</span><span class="lang-en">Daily · 8 AM–10 PM</span></span><span>$</span></div>
+        <h3 class="pc-name">Mister <em>Taco</em></h3>
+        <p class="pc-desc lang-es">Mi taquería favorita de toda la isla. Las aguas frescas buenísimas y el taco de chuleta con queso es obligatorio. Ojo con la salsa roja — pica de verdad. Siempre está lleno y eso ya lo dice todo.</p>
+        <p class="pc-desc lang-en">My absolute favorite on the island. Amazing aguas frescas and the chuleta con queso taco is a must. Heads up — the red salsa really brings the heat. Always packed, and that says it all.</p>
+        <div class="pc-tags"><span class="pc-tag fav"><span class="lang-es">Nuestra favorita</span><span class="lang-en">Our favorite</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Mister+Taco+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">03</span><span class="lab">TAQ</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ EL PIQUE ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Lun–Dom · 7 PM–2 AM</span><span class="lang-en">Mon–Sun · 7 PM–2 AM</span></span><span>$</span></div>
+        <h3 class="pc-name">Taquería El Pique</h3>
+        <p class="pc-desc lang-es">Pregúntale a cualquier cozumeleño por una taquería y te dirá El Pique. Probablemente con la mayor variedad de la ciudad — tacos de todo lo imaginable. Un clásico que no falla.</p>
+        <p class="pc-desc lang-en">Ask any local for a taquería and they'll say El Pique. Probably the widest variety in town — tacos with just about everything. A true island classic.</p>
+        <div class="pc-tags"><span class="pc-tag sand"><span class="lang-es">Clásico local</span><span class="lang-en">Local classic</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Taqueria+El+Pique+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">04</span><span class="lab">TAQ</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ LOS NOPALES ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Mar–Dom · 12–10 PM</span><span class="lang-en">Tue–Sun · 12–10 PM</span></span><span>$$</span></div>
+        <h3 class="pc-name">Los Nopales</h3>
+        <p class="pc-desc lang-es">Famosos por algo inesperado en una taquería: pizzas. Pero pizzas de pastor y otras carnes típicas de taco. Atención muy buena y nopales espectaculares. Vale la pena probar.</p>
+        <p class="pc-desc lang-en">Famous for something unexpected: pizza. But pastor and classic taco-meat pies. Excellent service and outstanding nopales (cactus). Something different that's well worth trying.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Pizzas de taco</span><span class="lang-en">Taco pizzas</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Los+Nopales+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">05</span><span class="lab">TAQ</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ CHILANGOS ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 6 PM–1 AM</span><span class="lang-en">Daily · 6 PM–1 AM</span></span><span>$$</span></div>
+        <h3 class="pc-name">Chilangos</h3>
+        <p class="pc-desc lang-es">Taquería nueva con propuesta diferente — tacos al estilo Ciudad de México. Si extrañas los sabores chilangos o quieres algo distinto a lo que se ve en Cozumel, este es tu lugar.</p>
+        <p class="pc-desc lang-en">A newer taquería bringing Mexico City–style tacos to Cozumel. If you miss those capital flavors or want a different take, this is your spot.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Estilo CDMX</span><span class="lang-en">Mexico City</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Chilangos+Tacos+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- III — RESTAURANTES ============================================================ -->
+<section class="section sec-rest" id="restaurantes" data-screen-label="03 Restaurantes">
+<div class="section-inner">
+  <div class="chapter-head">
+    <div class="chapter-no">III</div>
+    <div class="chapter-title-block">
+      <div class="chapter-kicker"><span class="lang-es">Capítulo tres · Comer</span><span class="lang-en">Chapter three · Eat</span></div>
+      <h2 class="chapter-title"><span class="lang-es">Para sentarse <em>sin prisa.</em></span><span class="lang-en">A place to <em>linger.</em></span></h2>
+      <p class="chapter-lede"><span class="lang-es">Diez lugares que vale la pena descubrir, desde clásicos de toda la vida hasta el sushi más nuevo.</span><span class="lang-en">Ten places worth discovering, from longtime classics to the newest sushi spot.</span></p>
+    </div>
+  </div>
+
+  <div class="postcards">
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">06</span><span class="lab">RES</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ BARBACOA LOS MAGUEYES ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Solo domingos · 8 AM–3 PM</span><span class="lang-en">Sundays only · 8 AM–3 PM</span></span><span>$$</span></div>
+        <h3 class="pc-name"><em>Barbacoa</em> los Magueyes</h3>
+        <p class="pc-desc lang-es">Nuestro restaurante familiar — literalmente enfrente de Casa Palma. Solo domingos: barbacoa de borrego de la casa, tortillas hechas a mano y un consomé que no vas a encontrar en otro lado.</p>
+        <p class="pc-desc lang-en">Our family's restaurant — right across the street from Casa Palma. Sundays only: slow-cooked lamb barbacoa, handmade tortillas, and a consomé you won't find anywhere else.</p>
+        <div class="pc-tags"><span class="pc-tag fav"><span class="lang-es">Nuestra casa</span><span class="lang-en">Our spot</span></span><span class="pc-tag sand"><span class="lang-es">Solo domingos</span><span class="lang-en">Sundays only</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Barbacoa+los+Magueyes+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Enfrente</span><span class="lang-en">Across</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">07</span><span class="lab">RES</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ AZUL MADERA ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Lun–Sáb · 1–11 PM</span><span class="lang-en">Mon–Sat · 1–11 PM</span></span><span>$$$</span></div>
+        <h3 class="pc-name">Azul Madera</h3>
+        <p class="pc-desc lang-es">En el centro y de esos lugares a los que volvemos siempre — mi papá y yo vamos cada que podemos. Carpaccio de pescado increíble, pesca del día y cocina variada.</p>
+        <p class="pc-desc lang-en">In the heart of town — one of those places we keep coming back to. The fish carpaccio is incredible, fresh catch of the day, and a wonderfully diverse menu.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Pesca del día</span><span class="lang-en">Catch of day</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Azul+Madera+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">08</span><span class="lab">RES</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ BAHAU ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 5–11 PM</span><span class="lang-en">Daily · 5–11 PM</span></span><span>$$$$</span></div>
+        <h3 class="pc-name">Bahau</h3>
+        <p class="pc-desc lang-es">Si buscas algo elegante — Bahau. Sobre la Rafael Melgar con vista al mar, atención de primera y cocina muy variada: hamburguesas, pastas, buenas carnes. Los entrantes, espectaculares.</p>
+        <p class="pc-desc lang-en">Looking for upscale? Bahau. On the Rafael Melgar waterfront with ocean views, impeccable service, and a menu that runs from burgers to pasta to excellent steaks. Appetizers are spectacular.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Vista al mar</span><span class="lang-en">Ocean view</span></span><span class="pc-tag sand"><span class="lang-es">Elegante</span><span class="lang-en">Upscale</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bahau+Restaurant+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Malecón</span><span class="lang-en">Waterfront</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">09</span><span class="lab">RES</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ LA CUCINA ITALIANA ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Mar–Dom · 6–11 PM</span><span class="lang-en">Tue–Sun · 6–11 PM</span></span><span>$$$</span></div>
+        <h3 class="pc-name">La Cucina Italiana</h3>
+        <p class="pc-desc lang-es">Cocina italiana de verdad. Una familia italiana lleva años en Cozumel. Entradas, fuertes y postres de primera, y el menú cambia cada día. Ambiente muy lindo en el centro.</p>
+        <p class="pc-desc lang-en">The real deal — authentic Italian from a family that's been on the island for years. Appetizers, mains, desserts all top-notch, menu changes daily. Beautiful atmosphere in the center.</p>
+        <div class="pc-tags"><span class="pc-tag fav"><span class="lang-es">Italiana auténtica</span><span class="lang-en">Authentic Italian</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Cucina+Italiana+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">10</span><span class="lab">RES</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ LA CHOZA ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 7 AM–10 PM</span><span class="lang-en">Daily · 7 AM–10 PM</span></span><span>$$</span></div>
+        <h3 class="pc-name">La Choza</h3>
+        <p class="pc-desc lang-es">Comida mexicana de toda la vida. Lleva años en la isla y no ha cambiado — servicio bueno, precios muy accesibles y carta enorme. Si no sabes qué comer, aquí siempre encuentras algo.</p>
+        <p class="pc-desc lang-en">Classic Mexican comfort food. Been on the island for years and hasn't changed — great service, affordable prices, huge menu. If you're not sure what you want, you'll always find something here.</p>
+        <div class="pc-tags"><span class="pc-tag sand"><span class="lang-es">Cocina mexicana</span><span class="lang-en">Mexican</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Choza+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">11</span><span class="lab">RES</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ GUIDO'S ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Lun–Sáb · 12–10 PM</span><span class="lang-en">Mon–Sat · 12–10 PM</span></span><span>$$$</span></div>
+        <h3 class="pc-name">Guido's</h3>
+        <p class="pc-desc lang-es">Probablemente el restaurante más destacado y favorito de las familias de la isla. Diseño bonito, carta variada y todo lo que pidas va a estar bueno. Si solo puedes ir a uno — que sea este.</p>
+        <p class="pc-desc lang-en">Arguably the most celebrated restaurant — a favorite among island families. Beautiful setting, diverse menu, and honestly, everything's excellent. If you only have time for one, make it this one.</p>
+        <div class="pc-tags"><span class="pc-tag fav"><span class="lang-es">Imperdible</span><span class="lang-en">Must-visit</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Guidos+Restaurant+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Malecón</span><span class="lang-en">Waterfront</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">12</span><span class="lab">RES</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ PALMERAS ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 7 AM–11 PM</span><span class="lang-en">Daily · 7 AM–11 PM</span></span><span>$$</span></div>
+        <h3 class="pc-name">Palmeras</h3>
+        <p class="pc-desc lang-es">Muy buena opción para desayunar. Justo enfrente del malecón con una vista privilegiada de la isla. Buen ambiente y una forma muy rica de empezar el día.</p>
+        <p class="pc-desc lang-en">A wonderful spot for breakfast. Right on the malecón with a prime waterfront view. Great atmosphere and a beautiful way to start your morning.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Desayunos</span><span class="lang-en">Breakfast</span></span><span class="pc-tag"><span class="lang-es">Malecón</span><span class="lang-en">Waterfront</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Palmeras+Restaurant+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Malecón</span><span class="lang-en">Waterfront</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">13</span><span class="lab">RES</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ LA COCAY ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Lun–Sáb · 5:30–11 PM</span><span class="lang-en">Mon–Sat · 5:30–11 PM</span></span><span>$$$</span></div>
+        <h3 class="pc-name">La Cocay</h3>
+        <p class="pc-desc lang-es">Italiano con buenas opciones vegetarianas, algo que no es fácil de encontrar en la isla. La coctelería también está muy bien. Si buscas algo diferente, vale la pena.</p>
+        <p class="pc-desc lang-en">An Italian restaurant with excellent vegetarian options — not always easy to find here. The cocktail menu is impressive too. Worth a visit if you want something different.</p>
+        <div class="pc-tags"><span class="pc-tag jungle"><span class="lang-es">Vegetariano</span><span class="lang-en">Vegetarian</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Cocay+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">14</span><span class="lab">RES</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ LA PERLITA ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 11 AM–8 PM</span><span class="lang-en">Daily · 11 AM–8 PM</span></span><span>$$</span></div>
+        <h3 class="pc-name">La Perlita</h3>
+        <p class="pc-desc lang-es">La marisquería predilecta de la isla. Pescado fresco, buenos cócteles y un ambiente muy local. Si quieres comer mariscos como los cozumeleños, es aquí.</p>
+        <p class="pc-desc lang-en">The island's go-to seafood spot. Fresh fish, great cocktails, and an authentically local atmosphere. If you want to eat seafood like the locals do, this is it.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Mariscos</span><span class="lang-en">Seafood</span></span><span class="pc-tag sand"><span class="lang-es">Muy local</span><span class="lang-en">Very local</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Perlita+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">15</span><span class="lab">RES</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ HANNYA TIGER SUSHI ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Mar–Dom · 6–11 PM</span><span class="lang-en">Tue–Sun · 6–11 PM</span></span><span>$$$</span></div>
+        <h3 class="pc-name">Hannya Tiger Sushi</h3>
+        <p class="pc-desc lang-es">Japonés nuevo en la isla. Buen sake, buen sushi y ambiente sofisticado. Todavía no lo conoce todo el mundo — aprovecha. Sin pierde.</p>
+        <p class="pc-desc lang-en">A newer Japanese restaurant. Great sake, excellent sushi, and a sophisticated vibe. Not everyone knows about it yet — take advantage while it's still a hidden gem.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Japonés</span><span class="lang-en">Japanese</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Hannya+Tiger+Sushi+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- IV — ANTOJITOS ============================================================ -->
+<section class="section sec-ant" id="antojitos" data-screen-label="04 Antojitos">
+<div class="section-inner">
+  <div class="chapter-head">
+    <div class="chapter-no">IV</div>
+    <div class="chapter-title-block">
+      <div class="chapter-kicker"><span class="lang-es">Capítulo cuatro · Comer</span><span class="lang-en">Chapter four · Eat</span></div>
+      <h2 class="chapter-title"><span class="lang-es">Antojitos del <em>barrio.</em></span><span class="lang-en">Neighborhood <em>cravings.</em></span></h2>
+      <p class="chapter-lede"><span class="lang-es">Los puestos, panaderías y heladerías a los que llegamos cuando tenemos hambre entre comidas.</span><span class="lang-en">The stalls, bakeries and ice-cream stops we hit when hunger catches us between meals.</span></p>
+    </div>
+  </div>
+
+  <div class="postcards">
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">16</span><span class="lab">ANT</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ DOÑA PILI ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Mar–Dom · 6–11 PM</span><span class="lang-en">Tue–Sun · 6–11 PM</span></span><span>$</span></div>
+        <h3 class="pc-name">Antojitos Doña <em>Pili</em></h3>
+        <p class="pc-desc lang-es">Mi favorito de toda la isla. Vengo desde niño y sigue igual de bueno. Las quesadillas no tienen pierde y la salsa es la mejor que he probado en Cozumel.</p>
+        <p class="pc-desc lang-en">My all-time favorite. I've been coming since I was a kid and it's just as good as ever. The quesadillas are a guaranteed hit and the salsa is the best I've ever had in Cozumel.</p>
+        <div class="pc-tags"><span class="pc-tag fav"><span class="lang-es">Mi favorito</span><span class="lang-en">Our favorite</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Antojitos+Dona+Pili+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">17</span><span class="lab">ANT</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ PANADERÍA MAPLE ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 6 AM–9 PM</span><span class="lang-en">Daily · 6 AM–9 PM</span></span><span>$</span></div>
+        <h3 class="pc-name">Panadería Maple</h3>
+        <p class="pc-desc lang-es">Panadería y cafetería con varias locaciones. Pan calientito, buen café y desayunos ricos. El lugar perfecto para sentarte a platicar sin prisa.</p>
+        <p class="pc-desc lang-en">A beloved bakery and café with several locations. Fresh warm bread, great coffee, delicious breakfasts. The perfect place to sit down and take your time.</p>
+        <div class="pc-tags"><span class="pc-tag sand"><span class="lang-es">Panadería</span><span class="lang-en">Bakery</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Panaderia+Maple+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Varias</span><span class="lang-en">Multiple</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">18</span><span class="lab">ANT</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ LA MICHOACANA ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 10 AM–10 PM</span><span class="lang-en">Daily · 10 AM–10 PM</span></span><span>$</span></div>
+        <h3 class="pc-name">La Michoacana</h3>
+        <p class="pc-desc lang-es">Si nunca has ido — prepárate. La heladería más famosa de México y en Cozumel hay en cada esquina. Nieves, paletas y aguas frescas. Nuestra recomendación: el agua de horchata.</p>
+        <p class="pc-desc lang-en">If you've never been, you're in for a treat. Mexico's most iconic ice cream chain — and Cozumel has one on every corner. Ice cream, paletas, fresh-fruit drinks. Our pick: horchata.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Helados</span><span class="lang-en">Ice cream</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Michoacana+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Varias</span><span class="lang-en">Multiple</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">19</span><span class="lab">ANT</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ EL RESBALÓN ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Mar–Dom · 7 AM–2 PM</span><span class="lang-en">Tue–Sun · 7 AM–2 PM</span></span><span>$</span></div>
+        <h3 class="pc-name">Empanadas El <em>Resbalón</em></h3>
+        <p class="pc-desc lang-es">Las mejores empanadas de la isla, sin discusión. Pollo, carne, pescado, frijol. Abre temprano, cierra temprano — no lo dejes para la tarde porque te quedas sin.</p>
+        <p class="pc-desc lang-en">The best empanadas on the island, hands down. Chicken, beef, fish, bean — something for everyone. They open early and close early, so don't wait until afternoon.</p>
+        <div class="pc-tags"><span class="pc-tag sand"><span class="lang-es">Abre temprano</span><span class="lang-en">Opens early</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Empanadas+El+Resbalon+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">20</span><span class="lab">ANT</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ PARRIPOLLO ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 11 AM–9 PM</span><span class="lang-en">Daily · 11 AM–9 PM</span></span><span>$</span></div>
+        <h3 class="pc-name">Pollería Parripollo</h3>
+        <p class="pc-desc lang-es">Pollo asado y ya. Nada complicado, pero bueno, bonito y barato. Para cuando quieres comer bien sin gastar.</p>
+        <p class="pc-desc lang-en">Rotisserie chicken, pure and simple. Nothing fancy, but delicious and incredibly affordable. For when you want a great meal without spending much.</p>
+        <div class="pc-tags"><span class="pc-tag jungle"><span class="lang-es">Económico</span><span class="lang-en">Budget</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Parripollo+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">21</span><span class="lab">ANT</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ ESQUITES &amp; MARQUESITAS ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Tardes &amp; noches</span><span class="lang-en">Evenings</span></span><span>$</span></div>
+        <h3 class="pc-name"><span class="lang-es">Esquites, marquesitas y raspados</span><span class="lang-en">Esquites, marquesitas &amp; raspados</span></h3>
+        <p class="pc-desc lang-es">En el parque del reloj o afuera del palacio municipal vas a encontrar carritos. No busques uno en específico — solo camina y déjate llevar. Cuestan casi nada.</p>
+        <p class="pc-desc lang-en">Around the clock park or outside city hall, you'll find carts. Just wander and let your nose guide you. All three are a true Mexican experience and cost next to nothing.</p>
+        <div class="pc-tags"><span class="pc-tag">Street food</span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Parque+del+Reloj+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Parque del reloj</span><span class="lang-en">Clock park</span></span></div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- V — UN DÍA PERFECTO ============================================================ -->
+<section class="section sec-dia" id="dia" data-screen-label="05 Un dia perfecto">
+<div class="section-inner">
+  <div class="chapter-head">
+    <div class="chapter-no">V</div>
+    <div class="chapter-title-block">
+      <div class="chapter-kicker"><span class="lang-es">Capítulo cinco · Itinerario</span><span class="lang-en">Chapter five · Itinerary</span></div>
+      <h2 class="chapter-title"><span class="lang-es">Un día, <em>hora por hora.</em></span><span class="lang-en">One day, <em>hour by hour.</em></span></h2>
+      <p class="chapter-lede"><span class="lang-es">Si solo tienes 24 horas — esto es lo que haríamos nosotros, hora por hora. Mezcla todos los lugares que te recomendamos en esta guía.</span><span class="lang-en">If you only have 24 hours — here's what we'd do, hour by hour. It uses spots from across this guide.</span></p>
+    </div>
+  </div>
+
+  <p class="day-intro">
+    <span class="lang-es">"Empieza temprano, sigue el sol, y cuando se ponga, déjate llevar."</span>
+    <span class="lang-en">"Start early, follow the sun, and when it sets — just go with it."</span>
+  </p>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-time">7:00<span class="ampm">AM</span></div>
+      <div class="tl-content">
+        <div class="tl-kicker"><span class="lang-es">Despierta</span><span class="lang-en">Wake up</span></div>
+        <div class="tl-place"><span class="lang-es">Pan calientito y café</span><span class="lang-en">Fresh bread &amp; coffee</span></div>
+        <div class="tl-where"><a href="https://www.google.com/maps/search/?api=1&amp;query=Panaderia+Maple+Cozumel" target="_blank" rel="noopener">Panadería Maple →</a></div>
+        <p class="tl-note"><span class="lang-es">Sal de Casa Palma caminando. Pide concha y café, o algo más grande si tienes hambre.</span><span class="lang-en">Walk out of Casa Palma. Grab a concha and a coffee — or something bigger if you're hungry.</span></p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">10:00<span class="ampm">AM</span></div>
+      <div class="tl-content">
+        <div class="tl-kicker"><span class="lang-es">Snorkel &amp; estrellas de mar</span><span class="lang-en">Snorkel &amp; starfish</span></div>
+        <div class="tl-place">El Cielo <span class="lang-es">con</span><span class="lang-en">with</span> <em>Maybe Tours</em></div>
+        <div class="tl-where"><a href="https://www.google.com/maps/search/?api=1&amp;query=Maybe+Tours+Cozumel" target="_blank" rel="noopener">Maybe Tours →</a></div>
+        <p class="tl-note"><span class="lang-es">La joya de Cozumel. Aguas turquesa, estrellas de mar y arrecife. <em>Reserva con anticipación</em> y revisa el clima — se disfruta al máximo con mar tranquilo.</span><span class="lang-en">The crown jewel. Turquoise water, starfish, and reef snorkeling. <em>Book ahead</em> and check the weather — best on calm seas.</span></p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">4:00<span class="ampm">PM</span></div>
+      <div class="tl-content">
+        <div class="tl-kicker"><span class="lang-es">Comida</span><span class="lang-en">Late lunch</span></div>
+        <div class="tl-place"><em>Azul Madera</em></div>
+        <div class="tl-where"><a href="https://www.google.com/maps/search/?api=1&amp;query=Azul+Madera+Cozumel" target="_blank" rel="noopener">Azul Madera →</a></div>
+        <p class="tl-note"><span class="lang-es">En el centro. Carpaccio de pescado, pesca del día y cocina variada. <em>Uno de esos lugares a los que volvemos siempre.</em></span><span class="lang-en">Downtown. Fish carpaccio, catch of the day, a menu that ranges wide. <em>One of those places we keep coming back to.</em></span></p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">7:00<span class="ampm">PM</span></div>
+      <div class="tl-content">
+        <div class="tl-kicker"><span class="lang-es">Atardecer</span><span class="lang-en">Sunset</span></div>
+        <div class="tl-place"><span class="lang-es">Caminata por el</span><span class="lang-en">Walk the</span> <em>malecón</em></div>
+        <div class="tl-where"><a href="https://www.google.com/maps/search/?api=1&amp;query=Malecon+Cozumel" target="_blank" rel="noopener">Malecón →</a></div>
+        <p class="tl-note"><span class="lang-es">No cuesta nada y es de esos momentos que no se olvidan. <em>El mejor atardecer del país,</em> sin exagerar. Camina hasta el muelle.</span><span class="lang-en">It costs nothing and it's one of those moments you'll never forget. <em>The best sunset in the country</em> — not exaggerating. Walk to the pier.</span></p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">8:30<span class="ampm">PM</span></div>
+      <div class="tl-content">
+        <div class="tl-kicker"><span class="lang-es">Cena</span><span class="lang-en">Dinner</span></div>
+        <div class="tl-place"><em>Guido's</em> <span class="lang-es">o</span><span class="lang-en">or</span> Bahau</div>
+        <div class="tl-where"><a href="https://www.google.com/maps/search/?api=1&amp;query=Guidos+Restaurant+Cozumel" target="_blank" rel="noopener">Guido's →</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=Bahau+Restaurant+Cozumel" target="_blank" rel="noopener">Bahau →</a></div>
+        <p class="tl-note"><span class="lang-es">Si quieres lo clásico, Guido's. Si quieres algo elegante con vista al mar, Bahau. <em>Reserva</em> — los dos se llenan.</span><span class="lang-en">If you want a classic, Guido's. Upscale with an ocean view, Bahau. <em>Book ahead</em> — both fill up.</span></p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">11:00<span class="ampm">PM</span></div>
+      <div class="tl-content">
+        <div class="tl-kicker"><span class="lang-es">Margarita o mojito</span><span class="lang-en">Margarita or mojito</span></div>
+        <div class="tl-place">The Thirsty Cougar &amp; Welcome to Miami</div>
+        <div class="tl-where"><a href="https://www.google.com/maps/search/?api=1&amp;query=Thirsty+Cougar+Cozumel" target="_blank" rel="noopener">Thirsty Cougar →</a></div>
+        <p class="tl-note"><span class="lang-es">Empieza con una margarita frozen frente al mar. <em>Una basta</em> — pero si quieres una más, vete por mojitos a Welcome to Miami.</span><span class="lang-en">Start with a frozen margarita facing the sea. <em>One is enough</em> — but if you want a second round, head to Welcome to Miami for mojitos.</span></p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">12:30<span class="ampm">AM</span></div>
+      <div class="tl-content">
+        <div class="tl-kicker"><span class="lang-es">Si quieres bailar</span><span class="lang-en">If you want to dance</span></div>
+        <div class="tl-place">Metropolitan <span class="lang-es">o</span><span class="lang-en">or</span> <em>Asteria</em></div>
+        <div class="tl-where"><a href="https://www.google.com/maps/search/?api=1&amp;query=Metropolitan+Social+Club+Cozumel" target="_blank" rel="noopener">Metropolitan →</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=Asteria+Speakeasy+Cozumel" target="_blank" rel="noopener">Asteria →</a></div>
+        <p class="tl-note"><span class="lang-es">Antro grande, Metropolitan. Más íntimo, busca el refri en Asteria. <em>Pide un taxi para volver.</em></span><span class="lang-en">Big club energy — Metropolitan. Hidden and intimate — find the fridge at Asteria. <em>Catch a taxi home.</em></span></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- VI — PLAYAS ============================================================ -->
+<section class="section sec-pla" id="playas" data-screen-label="06 Playas">
+<div class="section-inner">
+  <div class="chapter-head">
+    <div class="chapter-no">VI</div>
+    <div class="chapter-title-block">
+      <div class="chapter-kicker"><span class="lang-es">Capítulo seis · Mar</span><span class="lang-en">Chapter six · Sea</span></div>
+      <h2 class="chapter-title"><span class="lang-es">Las <em>cuatro</em> playas.</span><span class="lang-en">The <em>four</em> beaches.</span></h2>
+      <p class="chapter-lede"><span class="lang-es">Cuatro clubes muy distintos. Elige el que vaya con tu día — fiesta, familia, tranquilidad o snorkel.</span><span class="lang-en">Four very different beach clubs. Pick the one that fits your day — party, family, quiet, or snorkeling.</span></p>
+    </div>
+  </div>
+
+  <div class="postcards">
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">22</span><span class="lab">PLA</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ MR. SANCHOS ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Lun–Sáb · 9 AM–5 PM</span><span class="lang-en">Mon–Sat · 9 AM–5 PM</span></span><span>~$68 USD</span></div>
+        <h3 class="pc-name">Mr. Sanchos Beach Club</h3>
+        <p class="pc-desc lang-es">El mejor club de playa de la isla. Todo incluido: comida, barra libre, albercas, hamacas, parque acuático y playa enorme. <em>Reserva en mrsanchos.com</em> — se llena en días de crucero. Taxi: ~$20 USD. Tel: +52 987 871 9174.</p>
+        <p class="pc-desc lang-en">The best beach club on the island. All-inclusive: food, open bar, pools, hammocks, waterpark, gorgeous beach. <em>Book at mrsanchos.com</em> — fills fast on cruise days. Taxi: ~$20 USD. Tel: +52 987 871 9174.</p>
+        <div class="pc-tags"><span class="pc-tag fav"><span class="lang-es">Todo incluido</span><span class="lang-en">All-inclusive</span></span><span class="pc-tag sand"><span class="lang-es">Reservar</span><span class="lang-en">Book ahead</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Mr+Sanchos+Beach+Club+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span>Km 15 · <span class="lang-es">Sur</span><span class="lang-en">South</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">23</span><span class="lab">PLA</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ BUCCANOS ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 10 AM–6 PM</span><span class="lang-en">Daily · 10 AM–6 PM</span></span><span>$400 MXN</span></div>
+        <h3 class="pc-name">Buccanos Beach Club</h3>
+        <p class="pc-desc lang-es">Más íntimo y relajado. No es enorme, y eso es lo que lo hace especial. Comida de las mejores que vas a encontrar — mariscos frescos y pesca del día. <em>Buccanos at Night</em> vale mucho la pena. WhatsApp: +52 987 114 5607.</p>
+        <p class="pc-desc lang-en">More intimate and laid-back — smaller than the giants, and that's what makes it special. Some of the best food at any beach club here. <em>Buccanos at Night</em> dinner is absolutely worth it. WhatsApp: +52 987 114 5607.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Íntimo</span><span class="lang-en">Intimate</span></span><span class="pc-tag coral"><span class="lang-es">Gran comida</span><span class="lang-en">Great food</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Buccanos+Beach+Club+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Norte</span><span class="lang-en">North</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">24</span><span class="lab">PLA</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ CARLOS 'N CHARLIE'S ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 10 AM–6 PM</span><span class="lang-en">Daily · 10 AM–6 PM</span></span><span>$$</span></div>
+        <h3 class="pc-name">Carlos 'n Charlie's Beach Club</h3>
+        <p class="pc-desc lang-es">No es tranquilo y no pretende serlo. Música alta, tragos grandes, gente bailando desde mediodía. No vienes por la playa — vienes a pasarla increíble. Sin reserva. Costera Sur Km 14. Tel: +52 987 564 0960.</p>
+        <p class="pc-desc lang-en">Not a quiet beach club — doesn't try to be. Loud music, big drinks, dancing from noon. Nobody comes for the beach — you come for the party. No reservation needed. Costera Sur Km 14. Tel: +52 987 564 0960.</p>
+        <div class="pc-tags"><span class="pc-tag coral"><span class="lang-es">Fiesta</span><span class="lang-en">Party</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Carlos+n+Charlies+Beach+Club+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span>Km 14 · <span class="lang-es">Sur</span><span class="lang-en">South</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">25</span><span class="lab">PLA</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ MONEY BAR ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 9 AM–10 PM</span><span class="lang-en">Daily · 9 AM–10 PM</span></span><span>$20 USD</span></div>
+        <h3 class="pc-name">Money Bar Beach Club</h3>
+        <p class="pc-desc lang-es">Muy buena opción familiar. Cerca del centro, snorkel directo desde la orilla en Dzul-Ha. La entrada $20 USD incluye camastros, sombrillas y snorkel. Happy hour 5–7 PM 2x1. Web: moneybarbeachclub.com. Km 6.5.</p>
+        <p class="pc-desc lang-en">Great family option. Close to downtown, excellent shore snorkeling at Dzul-Ha reef. $20 USD entry includes loungers, umbrellas, snorkel gear. Happy hour 5–7 PM 2-for-1. Web: moneybarbeachclub.com. Km 6.5.</p>
+        <div class="pc-tags"><span class="pc-tag jungle"><span class="lang-es">Snorkel</span><span class="lang-en">Snorkeling</span></span><span class="pc-tag"><span class="lang-es">Familiar</span><span class="lang-en">Family</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Money+Bar+Beach+Club+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span>Km 6.5</span></div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- VII — TOURS ============================================================ -->
+<section class="section sec-tour" id="tours" data-screen-label="07 Tours">
+<div class="section-inner">
+  <div class="chapter-head">
+    <div class="chapter-no">VII</div>
+    <div class="chapter-title-block">
+      <div class="chapter-kicker"><span class="lang-es">Capítulo siete · Hacer</span><span class="lang-en">Chapter seven · Do</span></div>
+      <h2 class="chapter-title"><span class="lang-es">Aventuras de <em>la isla.</em></span><span class="lang-en"><em>Island</em> adventures.</span></h2>
+      <p class="chapter-lede"><span class="lang-es">Cuatro experiencias muy distintas: una arqueológica, una bajo el mar, otra sobre el mar y un parque para toda la familia.</span><span class="lang-en">Four very different experiences — ancient ruins, under the sea, on the sea, and a nature park for everyone.</span></p>
+    </div>
+  </div>
+
+  <div class="postcards">
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">26</span><span class="lab">TUR</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ SAN GERVASIO ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 8 AM–4 PM</span><span class="lang-en">Daily · 8 AM–4 PM</span></span><span>~$131 MXN</span></div>
+        <h3 class="pc-name">San Gervasio</h3>
+        <p class="pc-desc lang-es">La zona arqueológica maya más importante de Cozumel. Santuario dedicado a Ixchel, diosa de la fertilidad y la luna. <em>Llega temprano</em> para evitar el calor. Sin transporte público — taxi, moto o coche. Lleva agua, gorra y repelente.</p>
+        <p class="pc-desc lang-en">Cozumel's most important Mayan archaeological site — a sanctuary to Ixchel, goddess of fertility and the moon. <em>Arrive early</em> to beat the heat. No public transit — taxi, scooter, rental. Bring water, hat, bug spray.</p>
+        <div class="pc-tags"><span class="pc-tag sand"><span class="lang-es">Cultura maya</span><span class="lang-en">Mayan ruins</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=San+Gervasio+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro de la isla</span><span class="lang-en">Island center</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">27</span><span class="lab">TUR</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ MAYBE TOURS · EL CIELO ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · salidas matutinas</span><span class="lang-en">Daily · morning departures</span></span><span>$$$</span></div>
+        <h3 class="pc-name">Maybe Tours — <em>El Cielo</em></h3>
+        <p class="pc-desc lang-es">La joya de la corona. Banco de arena, aguas cristalinas, estrellas de mar. Snorkel en Palancar y Colombia, santuario de tortugas, ceviche y bebidas a bordo. Familia cozumeleña. <em>Reserva en maybetours.com</em> o @snorkeling_may_be_tours.</p>
+        <p class="pc-desc lang-en">The crown jewel. Sandbar, crystal water, starfish-covered seabed. Snorkeling at Palancar &amp; Colombia reefs, sea turtle sanctuary, ceviche and drinks on board. Local family business. <em>Book at maybetours.com</em> or @snorkeling_may_be_tours.</p>
+        <div class="pc-tags"><span class="pc-tag fav"><span class="lang-es">Imperdible</span><span class="lang-en">Must-do</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Maybe+Tours+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">28</span><span class="lab">TUR</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ CHANKANAAB ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Lun–Sáb · 8 AM–4 PM</span><span class="lang-en">Mon–Sat · 8 AM–4 PM</span></span><span>~$31 USD</span></div>
+        <h3 class="pc-name">Chankanaab</h3>
+        <p class="pc-desc lang-es">El parque natural más completo de la isla. Playa, snorkel con esculturas submarinas, show de lobos marinos, nado con delfines, jardín botánico y laguna con vestigios mayas. <em>Reserva con $5 USD</em> en chankanaabcozumel.com. Km 9.</p>
+        <p class="pc-desc lang-en">Cozumel's most complete nature park. Beach, snorkeling with underwater sculptures, sea lion show, dolphin encounters, botanical garden, lagoon with Mayan artifacts. <em>Book with $5 USD deposit</em> at chankanaabcozumel.com. Km 9.</p>
+        <div class="pc-tags"><span class="pc-tag jungle"><span class="lang-es">Familia</span><span class="lang-en">Family</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Chankanaab+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span>Km 9 · <span class="lang-es">Sur</span><span class="lang-en">South</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">29</span><span class="lab">TUR</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ ATLANTIS SUBMARINO ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Lun–Sáb · varios horarios</span><span class="lang-en">Mon–Sat · several departures</span></span><span>~$1,850 MXN</span></div>
+        <h3 class="pc-name">Atlantis Submarino</h3>
+        <p class="pc-desc lang-es">El único submarino turístico real en todo México. Bajas más de 30 metros y ves arrecifes, peces, tortugas, un barco hundido y la 'Pared' de Cozumel — sin mojarte. <em>Dura unas 2 horas.</em> Tel: +52 987 872 5671.</p>
+        <p class="pc-desc lang-en">The only real tourist submarine in Mexico. Descend over 100 feet to see reefs, fish, turtles, a shipwreck, and Cozumel's famous 'Wall' — all without getting wet. <em>About 2 hours total.</em> Tel: +52 987 872 5671.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Único en México</span><span class="lang-en">Only in Mexico</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Atlantis+Submarines+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- VIII — NOCTURNA ============================================================ -->
+<section class="section sec-noc" id="nocturna" data-screen-label="08 Nocturna">
+<div class="section-inner">
+  <div class="chapter-head">
+    <div class="chapter-no">VIII</div>
+    <div class="chapter-title-block">
+      <div class="chapter-kicker"><span class="lang-es">Capítulo ocho · Noche</span><span class="lang-en">Chapter eight · Night</span></div>
+      <h2 class="chapter-title"><span class="lang-es">Cuando <em>baja el sol.</em></span><span class="lang-en">When the <em>sun goes down.</em></span></h2>
+      <p class="chapter-lede"><span class="lang-es">Mojitos, micheladas y un refrigerador que es una puerta. Siete lugares para no dormir.</span><span class="lang-en">Mojitos, micheladas, and a fridge that's actually a door. Seven places not to sleep.</span></p>
+    </div>
+  </div>
+
+  <div class="postcards">
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">30</span><span class="lab">NOC</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ METROPOLITAN ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Jue–Sáb · 10 PM–4 AM</span><span class="lang-en">Thu–Sat · 10 PM–4 AM</span></span><span>$$</span></div>
+        <h3 class="pc-name">Metropolitan Social Club</h3>
+        <p class="pc-desc lang-es">El antro más grande de Cozumel. Reggaetón y música mexicana toda la noche. Sobre la Melgar, no caro. <em>Los sábados es cuando se pone mejor.</em> @metropolitansocialclub.</p>
+        <p class="pc-desc lang-en">The biggest club on the island. Reggaetón and Mexican music all night. On the Melgar, affordable. <em>Saturdays are when it really comes alive.</em> @metropolitansocialclub.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Antro</span><span class="lang-en">Club</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Metropolitan+Social+Club+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Malecón</span><span class="lang-en">Waterfront</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">31</span><span class="lab">NOC</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ ASTERIA SPEAKEASY ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Vie–Sáb · 10 PM–3 AM</span><span class="lang-en">Fri–Sat · 10 PM–3 AM</span></span><span>$$$</span></div>
+        <h3 class="pc-name">Asteria <em>Speakeasy</em></h3>
+        <p class="pc-desc lang-es">Entras por lo que parece una tiendita, abres un refri — y ahí está el antro. Íntimo, diferente y con muy buen ambiente. Reggaetón, house y de todo un poco. @asteria.nightclub.</p>
+        <p class="pc-desc lang-en">You walk into what looks like a corner shop, open a fridge — and there's the entrance. Intimate, unexpected, with a fantastic vibe. Reggaetón, house, everything in between. @asteria.nightclub.</p>
+        <div class="pc-tags"><span class="pc-tag">Speakeasy</span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Asteria+Speakeasy+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">32</span><span class="lab">NOC</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ THIRSTY COUGAR ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 11 AM–1 AM</span><span class="lang-en">Daily · 11 AM–1 AM</span></span><span>$$</span></div>
+        <h3 class="pc-name">The Thirsty Cougar</h3>
+        <p class="pc-desc lang-es">Las mejores margaritas que vas a probar — estilo frozen, con una ya quedas. Sobre la Melgar enfrente del mar. <em>Perfecto para empezar la noche.</em></p>
+        <p class="pc-desc lang-en">The best margaritas you'll ever have — frozen-style, one is all it takes. On the Melgar facing the sea. <em>Perfect for starting the night.</em></p>
+        <div class="pc-tags"><span class="pc-tag fav">Margaritas</span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Thirsty+Cougar+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Malecón</span><span class="lang-en">Waterfront</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">33</span><span class="lab">NOC</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ SR. MONO ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Mar–Dom · 12–11 PM</span><span class="lang-en">Tue–Sun · 12–11 PM</span></span><span>$</span></div>
+        <h3 class="pc-name">Sr. Mono</h3>
+        <p class="pc-desc lang-es">El lugar de las micheladas en Cozumel. Buenísimas y con una variedad que no vas a encontrar en otro lado. <em>Si te gustan, no busques más.</em></p>
+        <p class="pc-desc lang-en">The michelada capital of Cozumel. Seriously good, with a variety you won't find elsewhere. <em>If you love them — or want to discover them — look no further.</em></p>
+        <div class="pc-tags"><span class="pc-tag">Micheladas</span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Sr+Mono+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">34</span><span class="lab">NOC</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ WELCOME TO MIAMI ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 4 PM–12 AM</span><span class="lang-en">Daily · 4 PM–12 AM</span></span><span>$$</span></div>
+        <h3 class="pc-name">Welcome to <em>Miami</em></h3>
+        <p class="pc-desc lang-es">Los mejores mojitos de México, sin exagerar. Dos ubicaciones: Melgar y lado oriente. Hay varios cócteles, pero el mojito es obligatorio.</p>
+        <p class="pc-desc lang-en">The best mojitos in Mexico — no exaggeration. Two locations: Melgar and the east side. Plenty of cocktails, but the mojito is a must-order.</p>
+        <div class="pc-tags"><span class="pc-tag">Mojitos</span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Welcome+to+Miami+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span>2 <span class="lang-es">ubicaciones</span><span class="lang-en">locations</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">35</span><span class="lab">NOC</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ SEÑOR FROG'S ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 11 AM–4 AM</span><span class="lang-en">Daily · 11 AM–4 AM</span></span><span>$$</span></div>
+        <h3 class="pc-name">Señor Frog's</h3>
+        <p class="pc-desc lang-es">Si no has ido, no has vivido México. Restaurante, bar y fiesta en uno. Música en vivo, shows del staff, las famosas yardas y un ambiente donde todo se vale. Junto a Punta Langosta.</p>
+        <p class="pc-desc lang-en">If you haven't been, you haven't truly experienced Mexico. Restaurant, bar, and party in one. Live music, staff shows, yard-long drinks, anything-goes vibe. Next to Punta Langosta.</p>
+        <div class="pc-tags"><span class="pc-tag coral"><span class="lang-es">Fiesta</span><span class="lang-en">Party</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Senor+Frogs+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Malecón</span><span class="lang-en">Waterfront</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">36</span><span class="lab">NOC</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ WET WENDY'S ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 12–11 PM</span><span class="lang-en">Daily · 12–11 PM</span></span><span>$$</span></div>
+        <h3 class="pc-name">Wet Wendy's</h3>
+        <p class="pc-desc lang-es">Un clásico de Cozumel. Margaritas tropicales y cócteles creativos. Buen ambiente, comida Tex-Mex y música en vivo algunas noches. <em>Relajado para empezar o quedarte.</em></p>
+        <p class="pc-desc lang-en">A Cozumel classic. Tropical margaritas and creative cocktails. Great atmosphere, Tex-Mex food, live music some nights. <em>Laid-back enough to start your evening or stay all night.</em></p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Cócteles</span><span class="lang-en">Cocktails</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Wet+Wendys+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- IX — COMPRAS ============================================================ -->
+<section class="section sec-com" id="compras" data-screen-label="09 Compras">
+<div class="section-inner">
+  <div class="chapter-head">
+    <div class="chapter-no">IX</div>
+    <div class="chapter-title-block">
+      <div class="chapter-kicker"><span class="lang-es">Capítulo nueve · Comprar</span><span class="lang-en">Chapter nine · Shop</span></div>
+      <h2 class="chapter-title"><span class="lang-es">Un recuerdo de <em>Cozumel.</em></span><span class="lang-en">A piece of <em>Cozumel</em> to take home.</span></h2>
+      <p class="chapter-lede"><span class="lang-es">Tres lugares para llevarte una parte de Cozumel a casa.</span><span class="lang-en">Three places to take a piece of Cozumel home.</span></p>
+    </div>
+  </div>
+
+  <div class="postcards">
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">37</span><span class="lab">COM</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ PUNTA LANGOSTA ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 9 AM–10 PM</span><span class="lang-en">Daily · 9 AM–10 PM</span></span><span>$$</span></div>
+        <h3 class="pc-name">Plaza Punta Langosta</h3>
+        <p class="pc-desc lang-es">Centro comercial al aire libre enfrente del mar. Cine, artesanías, puros, ropa. Buen lugar para caminar y ver la vista mientras compras.</p>
+        <p class="pc-desc lang-en">Open-air shopping center on the waterfront. Movie theater, artisan shops, cigars, clothing. A great place to stroll and enjoy the view while you browse.</p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Centro comercial</span><span class="lang-en">Mall</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Punta+Langosta+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Malecón</span><span class="lang-en">Waterfront</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">38</span><span class="lab">COM</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ PAMA ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Lun–Sáb · 9 AM–9 PM</span><span class="lang-en">Mon–Sat · 9 AM–9 PM</span></span><span>$$$$</span></div>
+        <h3 class="pc-name">PAMA</h3>
+        <p class="pc-desc lang-es">Si buscas algo más exclusivo — perfumes, relojes, joyería. Edificio muy bonito en ubicación privilegiada frente al muelle. <em>Vale la pena entrar aunque sea a ver.</em></p>
+        <p class="pc-desc lang-en">If you want something more upscale — perfumes, watches, fine jewelry. Beautiful building in a prime location facing the pier. <em>Worth stepping inside even just to browse.</em></p>
+        <div class="pc-tags"><span class="pc-tag sand"><span class="lang-es">Exclusivo</span><span class="lang-en">Upscale</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=PAMA+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Muelle</span><span class="lang-en">Pier</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">39</span><span class="lab">COM</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ PARQUE DEL RELOJ ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Bazar · Vie–Dom · 6 PM–11 PM</span><span class="lang-en">Bazaar · Fri–Sun · 6 PM–11 PM</span></span><span>$</span></div>
+        <h3 class="pc-name"><em>Parque del Reloj</em> — Puestos y bazar</h3>
+        <p class="pc-desc lang-es">El corazón del centro. Entre semana, artesanías y comida. Fines de semana, bazar nocturno con ropa, joyería, artesanías, comida. <em>Precios de local, no de turista.</em></p>
+        <p class="pc-desc lang-en">The heart of downtown. Weekdays — artisan stalls and food. Weekends — a night bazaar with clothing, jewelry, crafts, food. <em>Local prices, not tourist prices.</em></p>
+        <div class="pc-tags"><span class="pc-tag fav"><span class="lang-es">Bazar fin de semana</span><span class="lang-en">Weekend bazaar</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Parque+del+Reloj+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- X — SERVICIOS ============================================================ -->
+<section class="section sec-serv" id="servicios" data-screen-label="10 Servicios">
+<div class="section-inner">
+  <div class="chapter-head">
+    <div class="chapter-no">X</div>
+    <div class="chapter-title-block">
+      <div class="chapter-kicker"><span class="lang-es">Capítulo diez · Lo práctico</span><span class="lang-en">Chapter ten · Essentials</span></div>
+      <h2 class="chapter-title"><span class="lang-es">Lo esencial, <em>a la mano.</em></span><span class="lang-en">Essentials, <em>close at hand.</em></span></h2>
+      <p class="chapter-lede"><span class="lang-es">Supermercados, farmacias y el OXXO de la esquina. Todo lo que vas a necesitar a cualquier hora.</span><span class="lang-en">Supermarkets, pharmacies, and the corner OXXO. Everything you'll need, any hour.</span></p>
+    </div>
+  </div>
+
+  <div class="postcards">
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">40</span><span class="lab">SUP</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ LA MEGA ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 7 AM–11 PM</span><span class="lang-en">Daily · 7 AM–11 PM</span></span><span>$$</span></div>
+        <h3 class="pc-name">La Mega</h3>
+        <p class="pc-desc lang-es">El supermercado más completo de la isla. No te va a faltar nada. Sobre la Melgar y con varias tiendas abajo. <em>Para una compra grande de la semana.</em></p>
+        <p class="pc-desc lang-en">The most complete supermarket on the island. You won't miss anything. On the Melgar with shops downstairs. <em>For stocking up for the week.</em></p>
+        <div class="pc-tags"><span class="pc-tag jungle"><span class="lang-es">Supermercado</span><span class="lang-en">Supermarket</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Mega+Chedraui+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Malecón</span><span class="lang-en">Waterfront</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">41</span><span class="lab">SUP</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ SUPER AKI ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 7 AM–10 PM</span><span class="lang-en">Daily · 7 AM–10 PM</span></span><span>$</span></div>
+        <h3 class="pc-name">Super Aki</h3>
+        <p class="pc-desc lang-es">El supermercado más cercano a Casa Palma. Sobre la Avenida 65 a pocas cuadras. No es el más grande, pero tiene lo esencial.</p>
+        <p class="pc-desc lang-en">The closest supermarket to Casa Palma. On Avenida 65, just a few blocks away. Not the biggest, but it has all the essentials.</p>
+        <div class="pc-tags"><span class="pc-tag jungle"><span class="lang-es">Cerca</span><span class="lang-en">Closest</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Super+Aki+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Avenida 65</span><span class="lang-en">Av. 65</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">42</span><span class="lab">24H</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ OXXO ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs">24 / 7</span><span>$</span></div>
+        <h3 class="pc-name">OXXO</h3>
+        <p class="pc-desc lang-es">Si eres mexicano ya lo conoces. Hay OXXOs por toda la isla. Snacks, bebidas, recargas, lo que necesites a cualquier hora. <em>El más cercano: calle 31 sur</em>, a pocos minutos caminando.</p>
+        <p class="pc-desc lang-en">If you're from Mexico, you already know. Think 7-Eleven, but everywhere. Snacks, drinks, phone credit, whatever you need at any hour. <em>Nearest: Calle 31 Sur</em>, just a few minutes' walk.</p>
+        <div class="pc-tags"><span class="pc-tag">24 <span class="lang-es">horas</span><span class="lang-en">hours</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=OXXO+Cozumel+Calle+31" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Calle 31</span><span class="lang-en">Calle 31</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">43</span><span class="lab">FAR</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ FARMACIAS SIMILARES ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Diario · 8 AM–11 PM</span><span class="lang-en">Daily · 8 AM–11 PM</span></span><span>$</span></div>
+        <h3 class="pc-name">Farmacias <em>Similares</em></h3>
+        <p class="pc-desc lang-es">La farmacia más querida de México — si ves al Doctor Simi bailando afuera, ya llegaste. Medicamentos baratos y consulta médica por casi nada.</p>
+        <p class="pc-desc lang-en">Mexico's most beloved pharmacy chain — if you see Dr. Simi dancing outside, you've arrived. Affordable medications and walk-in doctor consultations for almost nothing.</p>
+        <div class="pc-tags"><span class="pc-tag coral"><span class="lang-es">Farmacia</span><span class="lang-en">Pharmacy</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Farmacias+Similares+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Varias</span><span class="lang-en">Multiple</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">44</span><span class="lab">FAR</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ FARMACIAS GDL ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs">24 / 7</span><span>$$</span></div>
+        <h3 class="pc-name">Farmacias Guadalajara</h3>
+        <p class="pc-desc lang-es">Más que una farmacia — tiene de todo. Medicamentos, higiene, snacks y hasta panadería. Si necesitas algo y no sabes dónde buscarlo, esta es tu mejor opción.</p>
+        <p class="pc-desc lang-en">More than a pharmacy — has everything. Medications, toiletries, snacks, even a bakery section. If you need something and don't know where to look, this is your best bet.</p>
+        <div class="pc-tags"><span class="pc-tag coral"><span class="lang-es">Farmacia</span><span class="lang-en">Pharmacy</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Farmacias+Guadalajara+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">45</span><span class="lab">LAV</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ LAVANDERÍA ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Lun–Sáb · 8 AM–8 PM</span><span class="lang-en">Mon–Sat · 8 AM–8 PM</span></span><span>$</span></div>
+        <h3 class="pc-name">Lavandería <em>60 Sur</em></h3>
+        <p class="pc-desc lang-es">A pocos pasos de Casa Palma, sobre la Calle 60 Sur. Lavado y secado el mismo día, ropa de cama y toallas. <em>El servicio que más se agradece después de la playa.</em></p>
+        <p class="pc-desc lang-en">Just steps from Casa Palma on Calle 60 Sur. Same-day wash and fold, bedding and towels. <em>The service you'll thank us for after the beach.</em></p>
+        <div class="pc-tags"><span class="pc-tag jungle"><span class="lang-es">Lavandería</span><span class="lang-en">Laundry</span></span><span class="pc-tag sand"><span class="lang-es">Cerca</span><span class="lang-en">Closest</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Lavanderia+Calle+60+Sur+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Ver en mapa</span><span class="lang-en">Open in maps</span> <span class="arrow">→</span></a><span>Calle 60 Sur</span></div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- XI — TRANSPORTE ============================================================ -->
+<section class="section sec-trans" id="transporte" data-screen-label="11 Transporte">
+<div class="section-inner">
+  <div class="chapter-head">
+    <div class="chapter-no">XI</div>
+    <div class="chapter-title-block">
+      <div class="chapter-kicker"><span class="lang-es">Capítulo once · Moverse</span><span class="lang-en">Chapter eleven · Move</span></div>
+      <h2 class="chapter-title"><span class="lang-es">Moverse por <em>la isla.</em></span><span class="lang-en">Getting around <em>the island.</em></span></h2>
+      <p class="chapter-lede"><span class="lang-es">Taxi, ferry, moto, mototaxi o auto. Te explicamos lo que cuesta y para qué sirve cada uno.</span><span class="lang-en">Taxi, ferry, scooter, mototaxi, or rental car. Here's what each costs and what it's good for.</span></p>
+    </div>
+  </div>
+
+  <div class="postcards">
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">46</span><span class="lab">TRA</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ TAXI ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs">24 / 7</span><span>$5–20 USD</span></div>
+        <h3 class="pc-name">Taxi</h3>
+        <p class="pc-desc lang-es">Disponibles 24/7. Del centro a la zona hotelera sur ~$15–20 USD. Del muelle al centro ~$5–8 USD. <em>No usan taxímetro</em> — pregunta el precio antes de subir.</p>
+        <p class="pc-desc lang-en">Available 24/7. Downtown to south hotel zone ~$15–20 USD. Pier to downtown ~$5–8 USD. <em>No meters</em> — always agree on the price before getting in.</p>
+        <div class="pc-tags"><span class="pc-tag">24/7</span><span class="pc-tag sand"><span class="lang-es">Negociar</span><span class="lang-en">Agree fare</span></span></div>
+      </div>
+      <div class="pc-foot"><span></span><span><span class="lang-es">Toda la isla</span><span class="lang-en">Island-wide</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">47</span><span class="lab">TRA</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ FERRY ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Cada hora · 45 min</span><span class="lang-en">Hourly · 45 min</span></span><span>~$250 MXN</span></div>
+        <h3 class="pc-name">Ferry <span class="lang-es">a Playa del Carmen</span><span class="lang-en">to Playa del Carmen</span></h3>
+        <p class="pc-desc lang-es">Winjet y Ultramar salen cada hora desde la terminal del centro. 45 minutos. Compra en línea o en la terminal. <em>Si te mareas, siéntate afuera o atrás.</em></p>
+        <p class="pc-desc lang-en">Winjet and Ultramar depart hourly from the downtown terminal. 45 minutes. Buy online or at the terminal. <em>If you get seasick, sit outside or at the back.</em></p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Cada hora</span><span class="lang-en">Hourly</span></span></div>
+      </div>
+      <div class="pc-foot"><a href="https://www.google.com/maps/search/?api=1&amp;query=Ferry+Terminal+Cozumel" target="_blank" rel="noopener"><span class="lang-es">Terminal</span><span class="lang-en">Terminal</span> <span class="arrow">→</span></a><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">48</span><span class="lab">TRA</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ MOTO ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Renta diaria</span><span class="lang-en">Daily rental</span></span><span>$600–800 MXN</span></div>
+        <h3 class="pc-name"><span class="lang-es">Renta de moto</span><span class="lang-en">Scooter rental</span></h3>
+        <p class="pc-desc lang-es">Una de las mejores formas de conocer la isla. Desde $600–800 MXN por día. Varias tiendas en el centro. Licencia internacional funciona. <em>Usa casco y cuidado con los topes.</em></p>
+        <p class="pc-desc lang-en">One of the best ways to explore. From $600–800 MXN per day. Several downtown shops. International license works. <em>Wear a helmet — and watch out for speed bumps.</em></p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Aventura</span><span class="lang-en">Adventure</span></span></div>
+      </div>
+      <div class="pc-foot"><span></span><span><span class="lang-es">Centro</span><span class="lang-en">Downtown</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">49</span><span class="lab">TRA</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ MOTOTAXI ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Día y noche</span><span class="lang-en">Day &amp; night</span></span><span>~$40 MXN</span></div>
+        <h3 class="pc-name">Mototaxis</h3>
+        <p class="pc-desc lang-es">La nueva forma local de moverse. Te llevan a cualquier punto dentro de la zona urbana por ~$40 pesos. Rápidos, baratos, prácticos. <em>Solo levanta la mano.</em></p>
+        <p class="pc-desc lang-en">The new local way to get around. They'll take you anywhere in the urban area for ~40 pesos. Fast, cheap, practical. <em>Just flag one down.</em></p>
+        <div class="pc-tags"><span class="pc-tag sand"><span class="lang-es">Dentro de la ciudad</span><span class="lang-en">Around town</span></span></div>
+      </div>
+      <div class="pc-foot"><span></span><span><span class="lang-es">Zona urbana</span><span class="lang-en">Urban area</span></span></div>
+    </article>
+
+    <article class="postcard">
+      <div class="pc-stamp"><span class="n">50</span><span class="lab">TRA</span></div>
+      <div class="pc-img"><div class="ph"><span class="ph-label">[ AUTO ]</span></div></div>
+      <div class="pc-body">
+        <div class="pc-meta"><span class="hrs"><span class="lang-es">Renta diaria</span><span class="lang-en">Daily rental</span></span><span>$800–1,200 MXN</span></div>
+        <h3 class="pc-name"><span class="lang-es">Renta de auto</span><span class="lang-en">Car rental</span></h3>
+        <p class="pc-desc lang-es">Ideal si quieres recorrer el lado oriente o ir a las playas del sur con comodidad. Desde $800–1,200 MXN/día. Rentadoras en el centro y aeropuerto. <em>Las carreteras son buenas.</em></p>
+        <p class="pc-desc lang-en">Ideal if you want to explore the east side or hit the southern beaches in comfort. From $800–1,200 MXN/day. Agencies downtown and at the airport. <em>The roads are in good condition.</em></p>
+        <div class="pc-tags"><span class="pc-tag"><span class="lang-es">Lado oriente</span><span class="lang-en">East side</span></span></div>
+      </div>
+      <div class="pc-foot"><span></span><span><span class="lang-es">Centro &amp; aeropuerto</span><span class="lang-en">Downtown &amp; airport</span></span></div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- XII — TIPS ============================================================ -->
+<section class="section sec-tips" id="tips" data-screen-label="12 Tips">
+<div class="section-inner">
+  <div class="chapter-head">
+    <div class="chapter-no">XII</div>
+    <div class="chapter-title-block">
+      <div class="chapter-kicker"><span class="lang-es">Capítulo doce · Secretos</span><span class="lang-en">Chapter twelve · Secrets</span></div>
+      <h2 class="chapter-title"><span class="lang-es">Secretos del <em>cozumeleño.</em></span><span class="lang-en">A local's <em>secrets.</em></span></h2>
+      <p class="chapter-lede"><span class="lang-es">Lo que sabe un local y no está en ninguna guía. Léelos antes de salir de la casa mañana.</span><span class="lang-en">What the locals know that isn't in any guidebook. Read these before you head out tomorrow.</span></p>
+    </div>
+  </div>
+
+  <div class="tip-stack">
+
+    <div class="tip">
+      <div class="tip-no">i.</div>
+      <div>
+        <div class="tip-title"><span class="lang-es">La señora del coco — junto al IMSS</span><span class="lang-en">The coconut lady — next to the IMSS</span></div>
+        <div class="tip-text"><span class="lang-es">Si quieres coco fresco, agua de coco, frutas o aguas frescas, búscala a lado del Seguro Social en la 11 avenida. <em>Barato, fresco y de los mejores de la isla.</em></span><span class="lang-en">For fresh coconut, coconut water, fresh fruit, and fruit drinks, look for her next to the Social Security clinic on 11th Avenue. <em>Cheap, fresh, and some of the best on the island.</em></span></div>
+      </div>
+    </div>
+
+    <div class="tip">
+      <div class="tip-no">ii.</div>
+      <div>
+        <div class="tip-title"><span class="lang-es">Atardecer en el malecón</span><span class="lang-en">Sunset on the malecón</span></div>
+        <div class="tip-text"><span class="lang-es">Camina por el malecón en la tarde y déjate deslumbrar por el mejor atardecer del país. <em>No cuesta nada</em> y es de esos momentos que no se olvidan.</span><span class="lang-en">Take a walk along the waterfront boardwalk in the late afternoon and catch one of the most beautiful sunsets in Mexico. <em>It costs nothing</em> and it's one of those moments you'll never forget.</span></div>
+      </div>
+    </div>
+
+    <div class="tip">
+      <div class="tip-no">iii.</div>
+      <div>
+        <div class="tip-title"><span class="lang-es">Paseo por el lado oriente</span><span class="lang-en">Scenic drive on the east side</span></div>
+        <div class="tip-text"><span class="lang-es">Si rentaste coche o moto, este plan no te lo puedes saltar. Dale la vuelta a la isla por el lado oriente y conoce el Cozumel que los turistas no ven. Playas salvajes, carretera vacía y vistas increíbles. <em>Un plan muy local que vale la pena.</em></span><span class="lang-en">If you've rented a car or scooter, this is a must. Drive the loop around the east side of the island and discover the Cozumel that tourists don't see. Wild beaches, empty roads, and breathtaking views. <em>A truly local experience.</em></span></div>
+      </div>
+    </div>
+
+    <div class="tip">
+      <div class="tip-no">iv.</div>
+      <div>
+        <div class="tip-title"><span class="lang-es">Museo de la Isla</span><span class="lang-en">Museum of the Island</span></div>
+        <div class="tip-text"><span class="lang-es">Un museo pequeño pero muy completo que cuenta la historia de Cozumel — desde los mayas hasta hoy. 11 salas interactivas, exhibiciones marinas y terraza con vista al mar. En la Melgar. Mar–Dom, 9 AM–5 PM. Entrada ~$209 MXN. <em>Buen plan para un día de lluvia.</em></span><span class="lang-en">A small but excellent museum telling the story of Cozumel — from the ancient Maya to today. 11 interactive rooms, marine life exhibits, and a terrace with ocean views. On the Melgar. Tue–Sun, 9 AM–5 PM. Entry ~$209 MXN. <em>Great plan for a rainy day.</em></span></div>
+      </div>
+    </div>
+
+    <div class="tip">
+      <div class="tip-no">v.</div>
+      <div>
+        <div class="tip-title"><span class="lang-es">Siempre trae efectivo</span><span class="lang-en">Always carry cash</span></div>
+        <div class="tip-text"><span class="lang-es">Muchos lugares locales — taquerías, antojitos, puestos del parque, carritos de esquites — no aceptan tarjeta. <em>Con pesos en la bolsa</em> llegas a todos lados y sin sorpresas.</span><span class="lang-en">Many local spots — taquerías, street food stalls, market vendors, corn carts — don't accept cards. <em>Keep pesos on hand</em> and you'll never have a problem.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note-box">
+    <span style="font-size:18px;flex-shrink:0">📍</span>
+    <div>
+      <span class="lang-es"><strong>Tip de casa:</strong> Todos los nombres de esta guía los puedes buscar directamente en Google Maps — ubicación exacta, horarios actualizados y cómo llegar.</span>
+      <span class="lang-en"><strong>House tip:</strong> You can search every place in this guide directly on Google Maps — exact location, up-to-date hours, and directions.</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER ============================================================ -->
+<!-- FOOTER ============================================================ -->
+<footer class="footer-mini">
+  <div class="footer-mini-inner">
+    <span class="fm-mark">Casa Palma · Cozumel</span>
+  </div>
+</footer>
+
+<!-- QUICK BAR ============================================================ -->
+<div class="quick-bar">
+  <button class="qa-btn lang-switch" onclick="toggleLang()" aria-label="Switch language">
+    <span class="lang-es">EN</span><span class="lang-en">ES</span>
+  </button>
+  <span class="qa-divider"></span>
+  <button class="qa-btn icon-only" onclick="openModal(&#39;modal-whatsapp&#39;)" aria-label="WhatsApp" title="WhatsApp">
+    <span class="ico">💬</span>
+  </button>
+  <button class="qa-btn icon-only" onclick="openModal(&#39;modal-wifi&#39;)" aria-label="WiFi" title="WiFi">
+    <span class="ico">📶</span>
+  </button>
+  <a href="https://maps.google.com/?q=Calle+6+Sur+1734,+San+Miguel+II,+77666+Cozumel,+Q.Roo.,+Mexico" target="_blank" rel="noopener" class="qa-btn icon-only" aria-label="Maps" title="Maps">
+    <span class="ico">📍</span>
+  </a>
+  <button class="qa-btn sos" onclick="openModal(&#39;modal-emergency&#39;)" aria-label="SOS">
+    <span class="ico">🚨</span><span>SOS</span>
+  </button>
+</div>
+
+<!-- MODALS ============================================================ -->
+<div class="modal-overlay" id="modal-wifi" onclick="if(event.target===this)closeModal(&#39;modal-wifi&#39;)">
+<div class="modal-box">
+  <button class="modal-close" onclick="closeModal(&#39;modal-wifi&#39;)">×</button>
+  <div class="modal-title">📶 WiFi</div>
+  <div class="modal-row"><span class="ico">🏷️</span><div><b><span class="lang-es">Red:</span><span class="lang-en">Network:</span></b><br>Casa Palma Guest</div></div>
+  <div class="modal-row"><span class="ico">🔑</span><div><b><span class="lang-es">Contraseña:</span><span class="lang-en">Password:</span></b><br><span class="wifi-pass">CozumelParadise2024</span> <button class="copy-btn" onclick="copyWifi()"><span class="lang-es">Copiar</span><span class="lang-en">Copy</span></button></div></div>
+  <div class="modal-note">
+    <span class="lang-es">Si tienes problemas de conexión, reinicia el WiFi de tu dispositivo.</span>
+    <span class="lang-en">If you have trouble connecting, try toggling WiFi off and on.</span>
+  </div>
+</div>
+</div>
+
+<div class="modal-overlay" id="modal-emergency" onclick="if(event.target===this)closeModal(&#39;modal-emergency&#39;)">
+<div class="modal-box">
+  <button class="modal-close" onclick="closeModal(&#39;modal-emergency&#39;)">×</button>
+  <div class="modal-title">🚨 <span class="lang-es">Emergencias</span><span class="lang-en">Emergency</span></div>
+  <div class="modal-row"><span class="ico">📞</span><div><b><span class="lang-es">Emergencias:</span><span class="lang-en">Emergency:</span></b> <a href="tel:911">911</a></div></div>
+  <div class="modal-row"><span class="ico">⛑️</span><div><b><span class="lang-es">Cruz Roja:</span><span class="lang-en">Red Cross:</span></b> <a href="tel:+529878721058">+52 987 872 1058</a></div></div>
+  <div class="modal-row"><span class="ico">🚒</span><div><b><span class="lang-es">Bomberos:</span><span class="lang-en">Fire Dept:</span></b> <a href="tel:+529878720800">+52 987 872 0800</a></div></div>
+  <div class="modal-row"><span class="ico">👮</span><div><b><span class="lang-es">Policía turística:</span><span class="lang-en">Tourist Police:</span></b> <a href="tel:+529878720092">+52 987 872 0092</a></div></div>
+  <div class="modal-divider"></div>
+  <div class="modal-row"><span class="ico">💬</span><div><b><span class="lang-es">Anfitriona</span><span class="lang-en">Host</span> Alina:</b> <a href="https://wa.me/529875645509" target="_blank" rel="noopener">WhatsApp</a></div></div>
+  <div class="modal-row"><span class="ico">💬</span><div><b><span class="lang-es">Anfitriona</span><span class="lang-en">Host</span> Maria:</b> <a href="https://wa.me/529871031992" target="_blank" rel="noopener">WhatsApp</a></div></div>
+  <div class="modal-note">
+    <span class="lang-es">El hospital más cercano está a ~10 minutos en taxi. Farmacias Similares tienen consulta médica económica para emergencias menores.</span>
+    <span class="lang-en">The nearest hospital is ~10 minutes by taxi. Farmacias Similares offers affordable walk-in consultations for minor emergencies.</span>
+  </div>
+</div>
+</div>
+
+<div class="modal-overlay" id="modal-whatsapp" onclick="if(event.target===this)closeModal(&#39;modal-whatsapp&#39;)">
+<div class="modal-box">
+  <button class="modal-close" onclick="closeModal(&#39;modal-whatsapp&#39;)">×</button>
+  <div class="modal-title">💬 WhatsApp</div>
+  <div class="modal-row"><span class="ico">👩</span><div><b>Alina:</b> <a href="https://wa.me/529875645509" target="_blank" rel="noopener">+52 987 564 5509</a></div></div>
+  <div class="modal-row"><span class="ico">👩</span><div><b>Maria:</b> <a href="https://wa.me/529871031992" target="_blank" rel="noopener">+52 987 103 1992</a></div></div>
+  <div class="modal-note">
+    <span class="lang-es">Escríbenos si necesitas algo durante tu estancia. Estamos para ayudarte.</span>
+    <span class="lang-en">Message us if you need anything during your stay. We're here to help.</span>
+  </div>
+</div>
+</div>
+
+<!-- SCRIPTS ============================================================ -->
+<script>
+function setLang(lang) {
+  document.body.className = 'lang-' + lang;
+  document.documentElement.lang = lang;
+  document.title = lang === 'es'
+    ? 'Casa Palma — Guía Local de Cozumel'
+    : 'Casa Palma — Your Local Guide to Cozumel';
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  try { localStorage.setItem('lp-lang', lang); } catch(e){}
+}
+function toggleLang(){
+  var cur = document.body.className.indexOf('lang-en') !== -1 ? 'en' : 'es';
+  setLang(cur === 'es' ? 'en' : 'es');
+}
+
+function openModal(id){
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id){
+  document.getElementById(id).classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function copyWifi(){
+  var pw = 'CozumelParadise2024';
+  var lang = document.body.className.indexOf('lang-en') !== -1 ? 'en' : 'es';
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(pw).then(function(){ showCopied(lang); });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = pw; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    showCopied(lang);
+  }
+}
+function showCopied(lang){
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    var orig = btn.innerHTML;
+    btn.textContent = lang === 'es' ? '¡Copiada!' : 'Copied!';
+    btn.style.background = '#2A6040';
+    setTimeout(function(){
+      btn.innerHTML = orig;
+      btn.style.background = '';
+    }, 1800);
+  });
+}
+
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.active').forEach(function(m){
+      closeModal(m.id);
+    });
+  }
+});
+
+(function(){
+  var saved = null;
+  try { saved = localStorage.getItem('lp-lang'); } catch(e){}
+  var browserLang = (navigator.language || '').startsWith('es') ? 'es' : 'en';
+  setLang(saved || browserLang);
+})();
+
+(function(){
+  var sectionMap = {
+    'intro':'.ni-intro','taquerias':'.ni-taquerias','restaurantes':'.ni-restaurantes',
+    'antojitos':'.ni-antojitos','dia':'.ni-dia','playas':'.ni-playas',
+    'tours':'.ni-tours','nocturna':'.ni-nocturna','compras':'.ni-compras',
+    'servicios':'.ni-servicios','transporte':'.ni-transporte','tips':'.ni-tips'
+  };
+  var currentActive = null;
+  function setActive(id){
+    if (currentActive === id) return;
+    currentActive = id;
+    document.querySelectorAll('.nav-item').forEach(function(el){ el.classList.remove('active'); });
+    if (id && sectionMap[id]){
+      var navEl = document.querySelector(sectionMap[id]);
+      if (navEl){
+        navEl.classList.add('active');
+        var parent = navEl.parentElement;
+        if (parent && parent.scrollWidth > parent.clientWidth) {
+          var elLeft = navEl.offsetLeft;
+          var elRight = elLeft + navEl.offsetWidth;
+          var viewLeft = parent.scrollLeft;
+          var viewRight = viewLeft + parent.clientWidth;
+          if (elLeft < viewLeft || elRight > viewRight) {
+            parent.scrollTo({ left: elLeft - parent.clientWidth/2 + navEl.offsetWidth/2, behavior:'smooth' });
+          }
+        }
+      }
+    }
+  }
+  if ('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      var visible = [];
+      entries.forEach(function(e){ if (e.isIntersecting) visible.push(e); });
+      if (visible.length > 0){
+        visible.sort(function(a,b){ return a.boundingClientRect.top - b.boundingClientRect.top; });
+        var topId = visible[0].target.id;
+        if (topId && sectionMap[topId]) setActive(topId);
+      }
+    }, { rootMargin: '-15% 0px -55% 0px', threshold: 0 });
+    Object.keys(sectionMap).forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  }
+})();
+
+/* ---- Read-progress bar ---- */
+(function(){
+  var rp = document.getElementById('rp');
+  if (!rp) return;
+  function updateProgress(){
+    var h = document.documentElement;
+    var pct = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+    rp.style.width = Math.min(pct, 100) + '%';
+  }
+  window.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+})();
+
+/* ---- Scroll reveal ---- */
+(function(){
+  var mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
+  if (!('IntersectionObserver' in window) || !mq.matches) return;
+
+  var revObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('on'); revObs.unobserve(e.target); }
+    });
+  }, { rootMargin:'-4% 0px -6% 0px', threshold:0.06 });
+
+  document.querySelectorAll('.postcard').forEach(function(el, i){
+    el.classList.add('rv');
+    el.style.transitionDelay = (i % 3 * 0.09) + 's';
+    revObs.observe(el);
+  });
+  document.querySelectorAll('.chapter-head').forEach(function(el){
+    el.classList.add('rv');
+    revObs.observe(el);
+  });
+  document.querySelectorAll('.tl-item').forEach(function(el, i){
+    el.classList.add('rv');
+    el.style.transitionDelay = (i * 0.07) + 's';
+    revObs.observe(el);
+  });
+  document.querySelectorAll('.tip').forEach(function(el, i){
+    el.classList.add('rv');
+    el.style.transitionDelay = (i * 0.09) + 's';
+    revObs.observe(el);
+  });
+  document.querySelectorAll('.house-card').forEach(function(el, i){
+    el.classList.add('rv');
+    el.style.transitionDelay = (i * 0.12) + 's';
+    revObs.observe(el);
+  });
+  ['.intro-photo', '.intro-text'].forEach(function(sel, i){
+    var el = document.querySelector(sel);
+    if (el){ el.classList.add('rv'); el.style.transitionDelay = (i * 0.14) + 's'; revObs.observe(el); }
+  });
+})();
+
+/* ---- TOC rail ---- */
+(function(){
+  var rail = document.getElementById('toc-rail');
+  if (!rail) return;
+
+  var hero = document.querySelector('.hero');
+  if (hero && 'IntersectionObserver' in window){
+    var heroObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        rail.classList.toggle('show', !e.isIntersecting);
+      });
+    }, { threshold: 0.05 });
+    heroObs.observe(hero);
+  }
+
+  var tocMap = {
+    'intro':true,'taquerias':true,'restaurantes':true,'antojitos':true,
+    'dia':true,'playas':true,'tours':true,'nocturna':true,
+    'compras':true,'servicios':true,'transporte':true,'tips':true
+  };
+
+  function setTocActive(id){
+    rail.querySelectorAll('.toc-node').forEach(function(n){
+      n.classList.toggle('cur', n.dataset.sec === id);
+    });
+    rail.classList.toggle('in-dark', id === 'nocturna');
+  }
+
+  if ('IntersectionObserver' in window){
+    var tocObs = new IntersectionObserver(function(entries){
+      var visible = [];
+      entries.forEach(function(e){ if (e.isIntersecting) visible.push(e); });
+      if (visible.length > 0){
+        visible.sort(function(a,b){ return a.boundingClientRect.top - b.boundingClientRect.top; });
+        setTocActive(visible[0].target.id);
+      }
+    }, { rootMargin:'-15% 0px -55% 0px', threshold:0 });
+    Object.keys(tocMap).forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) tocObs.observe(el);
+    });
+  }
+
+  rail.querySelectorAll('.toc-node').forEach(function(n){
+    n.addEventListener('click', function(e){
+      e.preventDefault();
+      var target = document.getElementById(n.dataset.sec);
+      if (target){
+        var navEl = document.querySelector('.nav-wrap');
+        var offset = navEl ? navEl.offsetHeight + 8 : 60;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top:top, behavior:'smooth' });
+      }
+    });
+  });
+})();
+
+/* ---- Hide hero scroll hint on scroll ---- */
+(function(){
+  var hint = document.querySelector('.hero-hint');
+  if (!hint) return;
+  var hidden = false;
+  window.addEventListener('scroll', function(){
+    var should = window.pageYOffset > 80;
+    if (should !== hidden){ hidden = should; hint.style.opacity = should ? '0' : ''; }
+  }, {passive:true});
+})();
+</script>
+
+</body>
+</html>
