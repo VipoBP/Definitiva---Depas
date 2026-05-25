@@ -535,9 +535,10 @@ body{
 .qa-btn.icon-only{width:40px}
 .qa-btn.lang-switch{padding:0 14px;font-weight:700;letter-spacing:0.18em;color:var(--sol-pale)}
 .qa-btn.lang-switch:hover{background:rgba(246,239,224,0.1);color:#FBF8F3}
-.qa-btn.sos{padding:0 14px 0 12px;background:rgba(217,88,61,0.18);color:#FFB099}
-.qa-btn.sos:hover{background:rgba(217,88,61,0.36);color:#FBF8F3}
-.qa-btn.sos .ico{font-size:15px}
+.qa-btn.sos{padding:0 14px 0 12px;background:rgba(190,64,54,0.18);color:#F0A898}
+.qa-btn.sos:hover{background:rgba(190,64,54,0.34);color:#FBF8F3}
+.ico-sym{display:inline-flex;align-items:center;justify-content:center;width:28px;min-width:28px;height:28px;font-size:13px;font-family:'DM Sans',system-ui,sans-serif;font-weight:600;color:var(--mar);line-height:1;letter-spacing:0}
+.ico-sym.sos-col{color:var(--coral-deep);font-size:11px;font-weight:700;letter-spacing:.04em}
 
 /* ============ MODALS ============ */
 .modal-overlay{
@@ -744,15 +745,8 @@ body{
 
 /* ============ PROFESSIONAL REFINEMENTS ============ */
 
-/* Nav emoji: very subtle, accent on hover/active only */
-.nav-item .ico{
-  font-size:11px;line-height:1;
-  filter:grayscale(60%) opacity(0.45);
-  transition:filter .2s;
-}
-.nav-item:hover .ico,.nav-item.active .ico{
-  filter:grayscale(0%) opacity(0.9);
-}
+/* Nav: text-only, hide emoji completely */
+.nav-item .ico{display:none}
 
 /* White postcard cards — cleaner, more editorial */
 .postcard{
@@ -2100,16 +2094,16 @@ body{
   </button>
   <span class="qa-divider"></span>
   <button class="qa-btn icon-only" onclick="openModal(&#39;modal-whatsapp&#39;)" aria-label="WhatsApp" title="WhatsApp">
-    <span class="ico">💬</span>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 2h12v9.5H9.5L7 13.5V11.5H2z"/></svg>
   </button>
   <button class="qa-btn icon-only" onclick="openModal(&#39;modal-wifi&#39;)" aria-label="WiFi" title="WiFi">
-    <span class="ico">📶</span>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" aria-hidden="true"><path d="M1 6a9.5 9.5 0 0114 0M4 9a5.5 5.5 0 018 0M6.5 12a2 2 0 013 0"/><circle cx="8" cy="14.5" r=".6" fill="currentColor" stroke="none"/></svg>
   </button>
   <a href="https://maps.google.com/?q=Calle+6+Sur+1734,+San+Miguel+II,+77666+Cozumel,+Q.Roo.,+Mexico" target="_blank" rel="noopener" class="qa-btn icon-only" aria-label="Maps" title="Maps">
-    <span class="ico">📍</span>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 014.5 4.5C12.5 10.5 8 15 8 15S3.5 10.5 3.5 6A4.5 4.5 0 018 1.5z"/><circle cx="8" cy="6" r="1.5"/></svg>
   </a>
   <button class="qa-btn sos" onclick="openModal(&#39;modal-emergency&#39;)" aria-label="SOS">
-    <span class="ico">🚨</span><span>SOS</span>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 1.5L1 12.5h12L7 1.5z"/><path d="M7 6v3.5"/><circle cx="7" cy="11" r=".5" fill="currentColor" stroke="none"/></svg><span>SOS</span>
   </button>
 </div>
 
@@ -2117,9 +2111,9 @@ body{
 <div class="modal-overlay" id="modal-wifi" onclick="if(event.target===this)closeModal(&#39;modal-wifi&#39;)">
 <div class="modal-box">
   <button class="modal-close" onclick="closeModal(&#39;modal-wifi&#39;)">×</button>
-  <div class="modal-title">📶 WiFi</div>
-  <div class="modal-row"><span class="ico">🏷️</span><div><b><span class="lang-es">Red:</span><span class="lang-en">Network:</span></b><br>Casa Palma Guest</div></div>
-  <div class="modal-row"><span class="ico">🔑</span><div><b><span class="lang-es">Contraseña:</span><span class="lang-en">Password:</span></b><br><span class="wifi-pass">CozumelParadise2024</span> <button class="copy-btn" onclick="copyWifi()"><span class="lang-es">Copiar</span><span class="lang-en">Copy</span></button></div></div>
+  <div class="modal-title">WiFi</div>
+  <div class="modal-row"><span class="ico ico-sym">◌</span><div><b><span class="lang-es">Red:</span><span class="lang-en">Network:</span></b><br>Casa Palma Guest</div></div>
+  <div class="modal-row"><span class="ico ico-sym">◆</span><div><b><span class="lang-es">Contraseña:</span><span class="lang-en">Password:</span></b><br><span class="wifi-pass">CozumelParadise2024</span> <button class="copy-btn" onclick="copyWifi()"><span class="lang-es">Copiar</span><span class="lang-en">Copy</span></button></div></div>
   <div class="modal-note">
     <span class="lang-es">Si tienes problemas de conexión, reinicia el WiFi de tu dispositivo.</span>
     <span class="lang-en">If you have trouble connecting, try toggling WiFi off and on.</span>
@@ -2130,15 +2124,15 @@ body{
 <div class="modal-overlay" id="modal-emergency" onclick="if(event.target===this)closeModal(&#39;modal-emergency&#39;)">
 <div class="modal-box">
   <button class="modal-close" onclick="closeModal(&#39;modal-emergency&#39;)">×</button>
-  <div class="modal-title">🚨 <span class="lang-es">Emergencias</span><span class="lang-en">Emergency</span></div>
-  <div class="modal-row"><span class="ico">📞</span><div><b><span class="lang-es">Emergencias:</span><span class="lang-en">Emergency:</span></b> <a href="tel:911">911</a></div></div>
-  <div class="modal-row"><span class="ico">⛑️</span><div><b><span class="lang-es">Cruz Roja:</span><span class="lang-en">Red Cross:</span></b> <a href="tel:+529878721058">+52 987 872 1058</a></div></div>
-  <div class="modal-row"><span class="ico">🚒</span><div><b><span class="lang-es">Bomberos:</span><span class="lang-en">Fire Dept:</span></b> <a href="tel:+529878720800">+52 987 872 0800</a></div></div>
-  <div class="modal-row"><span class="ico">👮</span><div><b><span class="lang-es">Policía turística:</span><span class="lang-en">Tourist Police:</span></b> <a href="tel:+529878720092">+52 987 872 0092</a></div></div>
+  <div class="modal-title"><span class="lang-es">Emergencias</span><span class="lang-en">Emergency</span></div>
+  <div class="modal-row"><span class="ico ico-sym sos-col">911</span><div><b><span class="lang-es">Emergencias:</span><span class="lang-en">Emergency:</span></b> <a href="tel:911">911</a></div></div>
+  <div class="modal-row"><span class="ico ico-sym">✚</span><div><b><span class="lang-es">Cruz Roja:</span><span class="lang-en">Red Cross:</span></b> <a href="tel:+529878721058">+52 987 872 1058</a></div></div>
+  <div class="modal-row"><span class="ico ico-sym">▲</span><div><b><span class="lang-es">Bomberos:</span><span class="lang-en">Fire Dept:</span></b> <a href="tel:+529878720800">+52 987 872 0800</a></div></div>
+  <div class="modal-row"><span class="ico ico-sym">◉</span><div><b><span class="lang-es">Policía turística:</span><span class="lang-en">Tourist Police:</span></b> <a href="tel:+529878720092">+52 987 872 0092</a></div></div>
   <div class="modal-divider"></div>
-  <div class="modal-row"><span class="ico">💬</span><div><b><span class="lang-es">Anfitrión</span><span class="lang-en">Host</span> Victor:</b> <a href="https://wa.me/529871119261" target="_blank" rel="noopener">WhatsApp</a></div></div>
-  <div class="modal-row"><span class="ico">💬</span><div><b><span class="lang-es">Anfitriona</span><span class="lang-en">Host</span> Alina:</b> <a href="https://wa.me/529875645509" target="_blank" rel="noopener">WhatsApp</a></div></div>
-  <div class="modal-row"><span class="ico">💬</span><div><b><span class="lang-es">Anfitriona</span><span class="lang-en">Host</span> Maria:</b> <a href="https://wa.me/529871031992" target="_blank" rel="noopener">WhatsApp</a></div></div>
+  <div class="modal-row"><span class="ico ico-sym">◎</span><div><b><span class="lang-es">Anfitrión</span><span class="lang-en">Host</span> Victor:</b> <a href="https://wa.me/529871119261" target="_blank" rel="noopener">WhatsApp</a></div></div>
+  <div class="modal-row"><span class="ico ico-sym">◎</span><div><b><span class="lang-es">Anfitriona</span><span class="lang-en">Host</span> Alina:</b> <a href="https://wa.me/529875645509" target="_blank" rel="noopener">WhatsApp</a></div></div>
+  <div class="modal-row"><span class="ico ico-sym">◎</span><div><b><span class="lang-es">Anfitriona</span><span class="lang-en">Host</span> Maria:</b> <a href="https://wa.me/529871031992" target="_blank" rel="noopener">WhatsApp</a></div></div>
   <div class="modal-note">
     <span class="lang-es">El hospital más cercano está a ~10 minutos en taxi. Farmacias Similares tienen consulta médica económica para emergencias menores.</span>
     <span class="lang-en">The nearest hospital is ~10 minutes by taxi. Farmacias Similares offers affordable walk-in consultations for minor emergencies.</span>
@@ -2149,10 +2143,10 @@ body{
 <div class="modal-overlay" id="modal-whatsapp" onclick="if(event.target===this)closeModal(&#39;modal-whatsapp&#39;)">
 <div class="modal-box">
   <button class="modal-close" onclick="closeModal(&#39;modal-whatsapp&#39;)">×</button>
-  <div class="modal-title">💬 WhatsApp</div>
-  <div class="modal-row"><span class="ico">👨</span><div><b>Victor:</b> <a href="https://wa.me/529871119261" target="_blank" rel="noopener">+52 987 111 9261</a></div></div>
-  <div class="modal-row"><span class="ico">👩</span><div><b>Alina:</b> <a href="https://wa.me/529875645509" target="_blank" rel="noopener">+52 987 564 5509</a></div></div>
-  <div class="modal-row"><span class="ico">👩</span><div><b>Maria:</b> <a href="https://wa.me/529871031992" target="_blank" rel="noopener">+52 987 103 1992</a></div></div>
+  <div class="modal-title">WhatsApp</div>
+  <div class="modal-row"><span class="ico ico-sym">◎</span><div><b>Victor:</b> <a href="https://wa.me/529871119261" target="_blank" rel="noopener">+52 987 111 9261</a></div></div>
+  <div class="modal-row"><span class="ico ico-sym">◎</span><div><b>Alina:</b> <a href="https://wa.me/529875645509" target="_blank" rel="noopener">+52 987 564 5509</a></div></div>
+  <div class="modal-row"><span class="ico ico-sym">◎</span><div><b>Maria:</b> <a href="https://wa.me/529871031992" target="_blank" rel="noopener">+52 987 103 1992</a></div></div>
   <div class="modal-note">
     <span class="lang-es">Escríbenos si necesitas algo durante tu estancia. Estamos para ayudarte.</span>
     <span class="lang-en">Message us if you need anything during your stay. We're here to help.</span>
