@@ -745,8 +745,12 @@ body{
 
 /* ============ PROFESSIONAL REFINEMENTS ============ */
 
-/* Nav: text-only, hide emoji completely */
-.nav-item .ico{display:none}
+/* Nav: elegant SVG icons */
+.nav-item .ico{display:inline-flex;align-items:center;flex-shrink:0;opacity:.72;transition:opacity .15s}
+.nav-item:hover .ico,.nav-item.active .ico{opacity:1}
+.nav-item.active .ico svg{stroke:var(--papel-warm)}
+/* Hide map buttons from postcard footers */
+.pc-foot a{display:none}
 
 /* White postcard cards — cleaner, more editorial */
 .postcard{
@@ -831,20 +835,6 @@ body{
 .postcard{transition:transform .25s ease,box-shadow .25s ease,opacity .28s ease}
 .postcard.flt-hide{opacity:0;transform:scale(0.94) translateY(8px);pointer-events:none}
 
-/* ============ DUAL MAP BUTTONS ============ */
-.map-links-wrap{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
-.google-maps-link,.apple-maps-link{
-  display:inline-flex;align-items:center;gap:3px;
-  font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
-  padding:4px 9px;border-radius:3px;
-  background:rgba(26,35,24,0.07);color:var(--mar-deep);
-  transition:background .15s;white-space:nowrap;
-}
-.google-maps-link:hover,.apple-maps-link:hover{background:rgba(26,35,24,0.16)}
-.sec-noc .google-maps-link,.sec-noc .apple-maps-link{
-  background:rgba(247,243,236,0.1);color:#F2D8A4}
-.sec-noc .google-maps-link:hover,.sec-noc .apple-maps-link:hover{background:rgba(247,243,236,0.18)}
-.pc-foot{flex-wrap:wrap;gap:.35rem}
 
 /* ============ QUICK VIEW ============ */
 .pc-qv{
@@ -869,11 +859,6 @@ body{
   font-size:12px;line-height:1.5;color:rgba(244,240,232,.72);
   margin-bottom:.85rem;text-align:left;
 }
-.pcqv-maps{display:flex;gap:7px;justify-content:center;flex-wrap:wrap}
-.pcqv-maps .google-maps-link,.pcqv-maps .apple-maps-link{
-  background:rgba(247,243,236,0.1);color:#F4F0E8;
-}
-.pcqv-maps .google-maps-link:hover,.pcqv-maps .apple-maps-link:hover{background:rgba(247,243,236,0.22)}
 
 /* ============ ACCORDION (tips & servicios) ============ */
 .accordion-stack .tip{
@@ -926,8 +911,6 @@ body{
   background:var(--cielo-pale);color:var(--mar-deep);
   padding:3px 7px;border-radius:3px;
 }
-/* Map links inside accordion */
-.acc-text .map-links-wrap{margin-top:.65rem}
 
 </style>
 <script type='text/javascript' nonce='CNrGbkphPDNKWqsODk0tcA==' src='https://claude.ai/k8coJJ8Ev7HU-TAqv85tFcs99fDj5bdYGBOHPnJij3refilhOdEs_JbzU7Fd6uWxgERRkuZvAMpLDyCKzn8EscImkV-3lnOt1qS9D1wH3ZSAxcOG6RzJM1xBrz_mbnc1Dw2eR3eN74LxrrTe9B36BaLbnLtFpJ8m1gGzGjsAOpS73C08FnGctWhO9UHJ0PjjiRccVVWK35-FkKPYjDbX0jV8upJSj-kGxlppwPakhUlmuprmZ2XiwgvwJ_eDFI1EOz_-9uS0FF5qDFJS3jenlHBbBhXi4o2vZuXNxDn_e530Ufo6uMdz9gvl57IJ3b6li4IIoBTHdCeIXeRJVixl3v1_nCM-Bb0nAtffOh7UvxCExhvT0rtsShf3smC134MPscdozVIqzIYbxdtPLjI3wtBkNzr5PIRq-nx2XkJb_mKkYu8GCoWaoKydmW2qOUqIKkONpM6Nw8FPFTjyqyC1nxdSLqHgnaJe3yX4AWspLtehUgz3oEaIajz-TpUDQOekosjsXEfomX2pDZBw1nogd9wqLkHP4P9OMx__hfSQfLWX3Hrl3qpPJIDHyKfSsqketXBK'></script></head>
@@ -1022,18 +1005,18 @@ body{
 <nav class="nav-wrap" aria-label="Chapters">
   <div class="nav-inner">
     <span class="nav-brand">Casa Palma</span>
-    <a href="#intro" class="nav-item ni-intro"><span class="ico">🏡</span><span class="lang-es">Bienvenida</span><span class="lang-en">Welcome</span></a>
-    <a href="#taquerias" class="nav-item ni-taquerias"><span class="ico">🌮</span><span class="lang-es">Taquerías</span><span class="lang-en">Tacos</span></a>
-    <a href="#restaurantes" class="nav-item ni-restaurantes"><span class="ico">🍽️</span><span class="lang-es">Restaurantes</span><span class="lang-en">Restaurants</span></a>
-    <a href="#antojitos" class="nav-item ni-antojitos"><span class="ico">🥪</span><span class="lang-es">Antojitos</span><span class="lang-en">Street Eats</span></a>
-    <a href="#dia" class="nav-item ni-dia"><span class="ico">☀️</span><span class="lang-es">Un día perfecto</span><span class="lang-en">Perfect day</span></a>
-    <a href="#playas" class="nav-item ni-playas"><span class="ico">🏖️</span><span class="lang-es">Playas</span><span class="lang-en">Beaches</span></a>
-    <a href="#tours" class="nav-item ni-tours"><span class="ico">🐠</span>Tours</a>
-    <a href="#nocturna" class="nav-item ni-nocturna"><span class="ico">🌙</span><span class="lang-es">Noche</span><span class="lang-en">Nightlife</span></a>
-    <a href="#compras" class="nav-item ni-compras"><span class="ico">🛍️</span><span class="lang-es">Compras</span><span class="lang-en">Shops</span></a>
-    <a href="#servicios" class="nav-item ni-servicios"><span class="ico">🛍</span><span class="lang-es">Servicios</span><span class="lang-en">Essentials</span></a>
-    <a href="#transporte" class="nav-item ni-transporte"><span class="ico">🛵</span><span class="lang-es">Transporte</span><span class="lang-en">Getting around</span></a>
-    <a href="#tips" class="nav-item ni-tips"><span class="ico">💡</span>Tips</a>
+    <a href="#intro" class="nav-item ni-intro"><span class="ico"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5L8 2l6 6.5M3.5 7.5V14H6.5V9.5h3V14H13V7.5"/></svg></span><span class="lang-es">Bienvenida</span><span class="lang-en">Welcome</span></a>
+    <a href="#taquerias" class="nav-item ni-taquerias"><span class="ico"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9.5h11M4 9.5C4 7 5.8 5 8 5s4 2 4 4.5M8 13v-3.5M6.5 13h3"/></svg></span><span class="lang-es">Taquerías</span><span class="lang-en">Tacos</span></a>
+    <a href="#restaurantes" class="nav-item ni-restaurantes"><span class="ico"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="2" x2="5" y2="14"/><path d="M2.5 5.5A2.5 2.5 0 007.5 5.5V2"/><line x1="11.5" y1="2" x2="11.5" y2="6"/><path d="M9.5 6h4M11.5 6v8"/></svg></span><span class="lang-es">Restaurantes</span><span class="lang-en">Restaurants</span></a>
+    <a href="#antojitos" class="nav-item ni-antojitos"><span class="ico"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h6l-.5 8.5h-5L5 3z"/><path d="M3.5 3h9M8 11.5V14M6 14h4"/></svg></span><span class="lang-es">Antojitos</span><span class="lang-en">Street Eats</span></a>
+    <a href="#dia" class="nav-item ni-dia"><span class="ico"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.5"/><line x1="8" y1="1.5" x2="8" y2="3"/><line x1="8" y1="13" x2="8" y2="14.5"/><line x1="1.5" y1="8" x2="3" y2="8"/><line x1="13" y1="8" x2="14.5" y2="8"/><line x1="3.3" y1="3.3" x2="4.4" y2="4.4"/><line x1="11.6" y1="11.6" x2="12.7" y2="12.7"/><line x1="12.7" y1="3.3" x2="11.6" y2="4.4"/><line x1="4.4" y1="11.6" x2="3.3" y2="12.7"/></svg></span><span class="lang-es">Un día perfecto</span><span class="lang-en">Perfect day</span></a>
+    <a href="#playas" class="nav-item ni-playas"><span class="ico"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M1 10c.7-1.5 1.7-1.5 2.5 0s1.8 1.5 2.5 0 1.8-1.5 2.5 0 1.8 1.5 2.5 0 1.8-1.5 2.5 0"/><path d="M1 6.5c.7-1.5 1.7-1.5 2.5 0s1.8 1.5 2.5 0 1.8-1.5 2.5 0 1.8 1.5 2.5 0 1.8-1.5 2.5 0"/></svg></span><span class="lang-es">Playas</span><span class="lang-en">Beaches</span></a>
+    <a href="#tours" class="nav-item ni-tours"><span class="ico"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M10.5 5.5l-2 5-5 2 2-5 5-2z"/></svg></span>Tours</a>
+    <a href="#nocturna" class="nav-item ni-nocturna"><span class="ico"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 10.5A6 6 0 016.5 2a7 7 0 100 12 6 6 0 006-3.5z"/></svg></span><span class="lang-es">Noche</span><span class="lang-en">Nightlife</span></a>
+    <a href="#compras" class="nav-item ni-compras"><span class="ico"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6a3 3 0 016 0M2.5 6h11l-.8 8H3.3L2.5 6z"/></svg></span><span class="lang-es">Compras</span><span class="lang-en">Shops</span></a>
+    <a href="#servicios" class="nav-item ni-servicios"><span class="ico"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2.5"/><path d="M8 1.5V4M8 12v2.5M1.5 8H4M12 8h2.5M3.1 3.1l1.7 1.7M11.2 11.2l1.7 1.7M12.9 3.1l-1.7 1.7M4.8 11.2l-1.7 1.7"/></svg></span><span class="lang-es">Servicios</span><span class="lang-en">Essentials</span></a>
+    <a href="#transporte" class="nav-item ni-transporte"><span class="ico"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5a4 4 0 014 4C12 9.5 8 14.5 8 14.5S4 9.5 4 5.5a4 4 0 014-4z"/><circle cx="8" cy="5.5" r="1.5"/></svg></span><span class="lang-es">Transporte</span><span class="lang-en">Getting around</span></a>
+    <a href="#tips" class="nav-item ni-tips"><span class="ico"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2a3.5 3.5 0 013.5 3.5c0 1.7-1.5 3.2-2 4V11H6.5v-1.5c-.5-.8-2-2.3-2-4A3.5 3.5 0 018 2z"/><line x1="6.5" y1="12.5" x2="9.5" y2="12.5"/><line x1="7" y1="14" x2="9" y2="14"/></svg></span>Tips</a>
   </div>
 </nav>
 
@@ -2334,36 +2317,6 @@ document.addEventListener('keydown', function(e){
   });
 })();
 
-/* ---- Dual Maps (Google + Apple) ---- */
-(function(){
-  document.querySelectorAll('.pc-foot a[href*="google.com/maps"], .tl-where a[href*="google.com/maps"]').forEach(function(link){
-    var gUrl = link.href;
-    var query = '';
-    try { query = new URL(gUrl).searchParams.get('query') || ''; } catch(e){}
-    if (!query) return;
-    var aUrl = 'https://maps.apple.com/?q=' + encodeURIComponent(query);
-
-    // Update Google link text & style
-    link.querySelectorAll('.lang-es').forEach(function(s){ s.textContent = '🗺 Google'; });
-    link.querySelectorAll('.lang-en').forEach(function(s){ s.textContent = '🗺 Google'; });
-    var arrow = link.querySelector('.arrow');
-    if (arrow) arrow.remove();
-    link.classList.add('google-maps-link');
-
-    // Create Apple Maps link
-    var aLink = document.createElement('a');
-    aLink.href = aUrl; aLink.target = '_blank'; aLink.rel = 'noopener';
-    aLink.className = 'apple-maps-link';
-    aLink.innerHTML = '<span class="lang-es">🍎 Apple</span><span class="lang-en">🍎 Apple</span>';
-
-    // Wrap both in a container
-    var wrap = document.createElement('div');
-    wrap.className = 'map-links-wrap';
-    link.parentNode.insertBefore(wrap, link);
-    wrap.appendChild(link);
-    wrap.appendChild(aLink);
-  });
-})();
 
 /* ---- Quick View overlay on postcards ---- */
 (function(){
@@ -2373,21 +2326,7 @@ document.addEventListener('keydown', function(e){
     var nameEl = card.querySelector('.pc-name');
     var descEs = card.querySelector('.pc-desc.lang-es');
     var descEn = card.querySelector('.pc-desc.lang-en');
-    var mapLink = card.querySelector('.pc-foot a[href*="maps"]');
     if (!nameEl) return;
-
-    // Build map links
-    var mapHtml = '';
-    if (mapLink) {
-      var gUrl = mapLink.href;
-      var query = '';
-      try { query = new URL(gUrl).searchParams.get('query') || ''; } catch(e){}
-      var aUrl = query ? 'https://maps.apple.com/?q=' + encodeURIComponent(query) : '';
-      mapHtml = '<div class="pcqv-maps">' +
-        '<a href="' + gUrl + '" target="_blank" rel="noopener" class="google-maps-link"><span class="lang-es">🗺 Google</span><span class="lang-en">🗺 Google</span></a>' +
-        (aUrl ? '<a href="' + aUrl + '" target="_blank" rel="noopener" class="apple-maps-link"><span class="lang-es">🍎 Apple</span><span class="lang-en">🍎 Apple</span></a>' : '') +
-        '</div>';
-    }
 
     var qv = document.createElement('div');
     qv.className = 'pc-qv';
@@ -2396,7 +2335,7 @@ document.addEventListener('keydown', function(e){
       '<div class="pcqv-name">' + nameEl.innerHTML + '</div>' +
       (descEs ? '<p class="pcqv-desc lang-es">' + esc(descEs.textContent) + '</p>' : '') +
       (descEn ? '<p class="pcqv-desc lang-en">' + esc(descEn.textContent) + '</p>' : '') +
-      mapHtml + '</div>';
+      '</div>';
     card.appendChild(qv);
 
     // Mobile: tap to toggle
@@ -2492,16 +2431,6 @@ document.addEventListener('keydown', function(e){
     if (metaEl) bodyContent += '<div class="acc-meta">' + metaEl.innerHTML + '</div>';
     if (descEs) bodyContent += '<p class="lang-es">' + descEs.innerHTML + '</p>';
     if (descEn) bodyContent += '<p class="lang-en">' + descEn.innerHTML + '</p>';
-    if (mapLink) {
-      var gUrl = mapLink.href;
-      var query = '';
-      try { query = new URL(gUrl).searchParams.get('query') || ''; } catch(e){}
-      var aUrl = query ? 'https://maps.apple.com/?q=' + encodeURIComponent(query) : '';
-      bodyContent += '<div class="map-links-wrap">' +
-        '<a href="' + gUrl + '" target="_blank" rel="noopener" class="google-maps-link"><span class="lang-es">🗺 Google Maps</span><span class="lang-en">🗺 Google Maps</span></a>' +
-        (aUrl ? '<a href="' + aUrl + '" target="_blank" rel="noopener" class="apple-maps-link"><span class="lang-es">🍎 Apple Maps</span><span class="lang-en">🍎 Apple Maps</span></a>' : '') +
-        '</div>';
-    }
     bodyContent += '</div>';
 
     var body = document.createElement('div');
